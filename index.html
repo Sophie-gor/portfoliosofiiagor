@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Sofiia Gorpenko Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800;900&amp;family=Figtree:wght@400;500;700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/>
+<style>
+/* Layout idea: a scrapbook desk. Cream paper, sage blocks, blush accents, window-frame cards, folder-tab section headers, dashed hand arrows. Single theme by choice. */
+:root{
+  --paper:#F8F1EA; --ink:#232A26; --sage:#52705D; --mint:#DDE7DA; --blush:#F3C4C1; --white:#FFFFFF;
+  --line:rgba(35,42,38,.18);
+  --display:"Archivo","Arial Black",Impact,sans-serif;
+  --script:"Instrument Serif","Times New Roman",serif;
+  --body:"Figtree","Helvetica Neue",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;height:auto;display:block}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--sage);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+h1,h2,h3{margin:0;text-wrap:balance}
+.disp{font-family:var(--display);font-weight:900;text-transform:uppercase;letter-spacing:-.025em;line-height:.9}
+.scr{font-family:var(--script);font-style:italic;font-weight:400;text-transform:none;letter-spacing:0}
+.eyebrow{font:700 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase}
+.pill{color:var(--ink);display:inline-block;border:2px solid var(--ink);border-radius:999px;padding:6px 14px;font:700 14px/1.2 var(--body);background:var(--white)}
+.pill.y{background:var(--blush)} .pill.b{background:var(--sage);color:#fff;border-color:var(--sage)}
+.small{font-size:14px;line-height:1.5}
+.muted{opacity:.72}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:2px solid var(--ink)}
+.nav .wrap{display:flex;gap:18px;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px;overflow-x:auto}
+.nav b{font:900 18px var(--display);letter-spacing:-.02em;white-space:nowrap}
+.nav ul{display:flex;gap:16px;list-style:none;margin:0;padding:0;font:600 14px var(--body);white-space:nowrap}
+.nav a{text-decoration:none}.nav a:hover{text-decoration:underline}
+
+/* hero */
+.hero{padding:44px 0 0;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:end}
+.hero-copy{padding-bottom:48px}
+.hello{margin:0 0 6px;font:800 clamp(18px,2.6vw,28px) var(--display);text-transform:uppercase;letter-spacing:-.01em}
+.name-script{display:block;font-size:clamp(84px,15vw,200px);line-height:.8;color:var(--sage);margin:0 0 0 -4px}
+.name-heavy{display:block;font-size:clamp(46px,8.4vw,112px);margin-top:-.1em;position:relative}
+.role{margin:20px 0 12px;font:800 clamp(20px,2.6vw,30px)/1.15 var(--display);text-transform:uppercase;letter-spacing:-.01em}
+.lead{max-width:34em;font-size:19px;margin:0 0 20px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.arch{position:relative;background:var(--sage);border-radius:999px 999px 0 0;aspect-ratio:4/5.9;overflow:hidden;border:2px solid var(--ink);border-bottom:0}
+.arch img{position:absolute;left:0;bottom:0;width:100%}
+.arch::before{content:"";position:absolute;inset:auto -10% 38% 40%;height:46%;background:var(--mint);border-radius:50%}
+.arch img{z-index:1}
+
+/* ticker */
+.strip{background:var(--ink);color:var(--paper);border-top:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.strip p{margin:0;padding:12px 20px;text-align:center;font:800 15px var(--display);text-transform:uppercase;letter-spacing:.06em}
+.strip i{font:italic 400 20px var(--script);text-transform:none;letter-spacing:0;margin:0 10px;color:var(--blush)}
+
+/* sections */
+section{padding:72px 0;position:relative}
+.band-sage{background:var(--sage);color:#fff}
+.band-sky{background:var(--mint)}
+.band-ink{background:var(--ink);color:var(--paper)}
+.sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px;margin-bottom:10px}
+.sec-head .no{font:900 clamp(44px,7vw,84px) var(--display);line-height:.9}
+.sec-head h2{font:900 clamp(34px,5.6vw,72px)/.92 var(--display);text-transform:uppercase;letter-spacing:-.025em}
+.sec-head h2 em{font:italic 400 1.08em var(--script);text-transform:none;letter-spacing:0;color:var(--sage)}
+.band-sage .sec-head h2 em,.band-ink .sec-head h2 em{color:var(--blush)}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.intro{max-width:46em;margin:0 0 28px;font-size:18px}
+.intro.wide{max-width:60em}
+
+/* window frames */
+.win{background:var(--white);color:var(--ink);border:2px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.band-ink .win{box-shadow:6px 6px 0 var(--sage)}
+.win-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;border-bottom:2px solid var(--ink);background:var(--paper);font:700 12px var(--body);letter-spacing:.04em}
+.win-bar i{width:11px;height:11px;border-radius:50%;border:2px solid var(--ink);display:inline-block}
+.win-bar i:nth-child(1){background:#E58E86}.win-bar i:nth-child(2){background:var(--blush)}.win-bar i:nth-child(3){background:#9DBFA5}
+.win-bar span{margin-left:8px}
+.win figure{margin:0}
+.win figcaption{padding:12px 14px 14px;font-size:14.5px;line-height:1.5}
+.win figcaption b{display:block;font:800 15px var(--body);margin-bottom:2px}
+.win img,.win video{width:100%;background:#000}
+.grid{display:grid;gap:28px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.tape{position:absolute;top:-12px;left:50%;width:90px;height:24px;background:rgba(243,196,193,.9);transform:translateX(-50%) rotate(-3deg);border:1px solid rgba(0,0,0,.15)}
+.rel{position:relative}
+.note{border:2px dashed currentColor;border-radius:12px;padding:14px 16px;font-size:15px;max-width:52em}
+.note b{font-weight:800}
+
+/* contents */
+.toc{list-style:none;margin:0;padding:0;border-top:3px solid var(--ink)}
+.toc li{border-bottom:3px solid var(--ink)}
+.toc a{display:grid;grid-template-columns:48px minmax(0,1.1fr) minmax(0,1.4fr);gap:16px;align-items:baseline;text-decoration:none;padding:14px 4px}
+.toc a:hover{background:var(--blush)}
+.toc .n{font:900 24px var(--display)}
+.toc .t{font:800 clamp(20px,2.6vw,30px)/1.05 var(--display);text-transform:uppercase;letter-spacing:-.02em}
+.toc .d{font-size:15px;line-height:1.4}
+
+/* cards */
+.card{background:var(--white);border:2px solid var(--ink);border-radius:14px;padding:22px;box-shadow:6px 6px 0 var(--ink)}
+.card h3{font:900 24px/1 var(--display);text-transform:uppercase;letter-spacing:-.02em;margin-bottom:10px}
+.card h3 em{font:italic 400 1.15em var(--script);text-transform:none;color:var(--sage)}
+.card p{margin:0 0 10px}.card p:last-child{margin-bottom:0}
+.card ul{margin:0;padding-left:20px}.card li{margin:4px 0}
+
+/* tools table */
+.tools{width:100%;border-collapse:collapse;background:var(--white);border:2px solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:6px 6px 0 var(--ink)}
+.tools th,.tools td{padding:14px 16px;text-align:left;border-bottom:2px solid var(--ink);vertical-align:top}
+.tools th{font:800 12px var(--body);letter-spacing:.12em;text-transform:uppercase;background:var(--paper)}
+.tools tr:last-child td{border-bottom:0}
+.tools td:first-child{font:900 20px var(--display);text-transform:uppercase;letter-spacing:-.02em;white-space:nowrap}
+.lvl{display:inline-block;border-radius:999px;padding:4px 12px;font:800 13px var(--body);border:2px solid var(--ink)}
+.lvl.s{background:var(--sage);color:#fff;border-color:var(--sage)}.lvl.g{background:var(--blush)}.lvl.n{background:var(--paper)}
+.tw{overflow-x:auto}
+
+/* concepts */
+.cgrid{display:grid;gap:28px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.slide{aspect-ratio:4/5;border-radius:10px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;border:2px solid var(--ink)}
+.slide .tag{align-self:flex-start;background:var(--ink);color:#fff;font:700 11px var(--body);letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+.slide h4{margin:0;font:900 clamp(26px,3.2vw,38px)/.95 var(--display);text-transform:uppercase;letter-spacing:-.02em}
+.slide h4 em{font:italic 400 1.12em var(--script);text-transform:none;letter-spacing:0}
+.slide p{margin:0;font-size:14px;line-height:1.4}
+.sl-a{background:var(--sage);color:#fff}.sl-a .tag{background:#fff;color:var(--ink)}.sl-a h4 em{color:var(--blush)}
+.sl-b{background:var(--blush)}.sl-b h4 em{color:var(--sage)}
+.sl-c{background:var(--mint)}.sl-c h4 em{color:var(--sage)}
+.steps{margin:12px 0 0;padding-left:20px;font-size:14.5px}.steps li{margin:3px 0}
+.spec{font:700 12px var(--body);letter-spacing:.1em;text-transform:uppercase;margin:12px 0 4px}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:3px solid var(--ink)}
+.tl li{position:relative;padding:0 0 22px 24px}
+.tl li::before{content:"";position:absolute;left:-10px;top:6px;width:17px;height:17px;border-radius:50%;background:var(--blush);border:3px solid var(--ink)}
+.tl b{display:block;font:900 20px/1.1 var(--display);text-transform:uppercase;letter-spacing:-.02em}
+.tl span{font-size:15px}
+.tl .when{font:700 12px var(--body);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:2px}
+
+.contact{text-align:left}
+.contact .big{font:900 clamp(48px,10vw,140px)/.88 var(--display);text-transform:uppercase;letter-spacing:-.03em}
+.tiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.tool{background:var(--white);border:2px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink);padding:16px 14px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.tool .mono{width:54px;height:54px;border-radius:14px;border:2px solid var(--ink);display:grid;place-items:center;font:900 22px var(--display);background:var(--sage);color:#fff}
+.tool:nth-child(2) .mono{background:var(--blush);color:var(--ink)}.tool:nth-child(3) .mono{background:var(--mint);color:var(--ink)}.tool:nth-child(4) .mono{background:var(--ink);color:var(--paper)}
+.tool.off{border-style:dashed;box-shadow:none;background:transparent}.tool.off .mono{background:var(--paper);color:var(--ink);opacity:.6}
+.tool b{font:800 16px/1.15 var(--body)}.tool p{margin:0;font-size:13.5px;line-height:1.45}
+.card ul.sk{list-style:none;margin:0;padding:0}.sk li{padding:10px 0;border-bottom:1.5px dashed var(--line)}.sk li:last-child{border-bottom:0}
+.sk b{display:block;font-weight:800}.sk span{font-size:15px;line-height:1.5}.sk a{white-space:nowrap}
+@media (max-width:1000px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stats{display:grid;gap:16px;grid-template-columns:repeat(4,minmax(0,1fr))}.stats.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stat{background:var(--white);border:2px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:18px 18px 16px}
+.stat .num{display:block;font:900 clamp(32px,4.4vw,52px)/1 var(--display);color:var(--sage);letter-spacing:-.02em}
+.stat b{display:block;margin-top:8px;font-weight:800;font-size:15px;line-height:1.3}.stat span.sub{display:block;margin-top:4px;font-size:13.5px;line-height:1.45;opacity:.8}
+@media (max-width:900px){.stats,.stats.c3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.stats,.stats.c3{grid-template-columns:1fr}}
+/* results design */
+.rs-hero{display:grid;gap:16px;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;margin-top:6px}
+.rs-big{grid-row:1 / span 2;background:var(--sage);color:var(--paper);border:2px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--blush);padding:28px 26px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.rs-big::after{content:"";position:absolute;right:-60px;bottom:-60px;width:200px;height:200px;border-radius:50%;background:rgba(248,241,234,.10)}
+.rs-kicker{font:800 12px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--blush)}
+.rs-num{display:block;margin-top:14px;font:900 clamp(48px,7vw,92px)/.95 var(--display);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.rs-big b{display:block;margin-top:10px;font:800 clamp(16px,1.8vw,22px)/1.2 var(--display);text-transform:uppercase;letter-spacing:.02em}
+.rs-big p{margin:8px 0 0;font-size:14.5px;line-height:1.5;opacity:.9;max-width:30ch}
+.rs-tile{background:var(--white);color:var(--ink);border:2px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);padding:18px}
+.rs-tile.wide{grid-column:2 / span 2}
+.rs-tile .num{display:block;font:900 clamp(30px,3.8vw,46px)/1 var(--display);color:var(--sage);letter-spacing:-.02em}
+.rs-tile b{display:block;margin-top:8px;font-weight:800;font-size:15px;line-height:1.3}
+.rs-tile span.sub{display:block;margin-top:4px;font-size:13.5px;line-height:1.45;opacity:.8}
+.charts{display:grid;gap:18px;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:30px;align-items:stretch}
+.chart{background:var(--white);color:var(--ink);border:2px solid var(--ink);border-radius:14px;box-shadow:6px 6px 0 var(--ink);overflow:hidden}
+.chart-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:2px solid var(--ink);background:var(--mint);font:800 11px/1 var(--display);letter-spacing:.1em;text-transform:uppercase}
+.chart-bar i{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink);background:var(--white)}
+.chart-bar span{margin-left:6px}
+.chart-body{padding:18px 18px 12px}
+.chart-body h4{margin:0;font:900 19px/1.15 var(--display);text-transform:uppercase;letter-spacing:-.01em}
+.chart-body h4 em{font:italic 400 1.08em var(--script);text-transform:none;color:var(--sage);letter-spacing:0}
+.chart-body .cap{margin:6px 0 16px;font-size:13px;opacity:.75}
+.brow{position:relative;padding:0 0 15px;outline:none}
+.bhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.bhead b{font-weight:800;font-size:14.5px}
+.bhead em{font:900 20px/1 var(--display);font-style:normal;color:var(--ink);letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.btrack{margin-top:7px;height:16px;border-radius:4px;background:var(--mint);overflow:hidden}
+.bfill{display:block;height:100%;width:var(--w);background:var(--sage);border-radius:0 4px 4px 0;transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.charts.armed .bfill{width:0}
+.charts.armed.in .bfill{width:var(--w)}
+.bsub{display:block;margin-top:5px;font-size:12.5px;line-height:1.4;opacity:.75}
+.brow:hover .bfill,.brow:focus-visible .bfill{background:var(--ink)}
+.brow[data-tip]::after{content:attr(data-tip);position:absolute;left:0;bottom:calc(100% - 6px);z-index:3;background:var(--ink);color:var(--paper);font-size:12px;line-height:1.35;padding:6px 9px;border-radius:6px;white-space:normal;max-width:240px;opacity:0;transform:translateY(4px);pointer-events:none;transition:opacity .15s,transform .15s}
+.brow:hover::after,.brow:focus-visible::after{opacity:1;transform:none}
+.chart-note{margin:16px 2px 0;font-size:13px;opacity:.75;max-width:80ch}
+@media (max-width:1000px){.charts{grid-template-columns:1fr}.rs-hero{grid-template-columns:1fr 1fr}.rs-big{grid-column:1 / span 2;grid-row:auto}.rs-tile.wide{grid-column:1 / span 2}}
+@media (max-width:560px){.rs-hero{grid-template-columns:1fr}.rs-big,.rs-tile.wide{grid-column:auto}}
+
+.t3{display:grid;gap:18px;grid-template-columns:1.05fr 1fr;margin-top:30px;align-items:stretch}
+.t3-copy{background:var(--blush);color:var(--ink);border:2px solid var(--ink);border-radius:16px;box-shadow:6px 6px 0 var(--ink);padding:26px 26px 22px}
+.t3k{color:var(--ink);opacity:.7}
+.t3-copy h3{margin:10px 0 0;font:900 clamp(30px,3.6vw,46px)/.95 var(--display);text-transform:uppercase;letter-spacing:-.025em}
+.t3-copy h3 em{font:italic 400 1.05em var(--script);text-transform:none;letter-spacing:0;color:var(--sage)}
+.t3-copy>p{margin:12px 0 18px;font-size:15px;line-height:1.55;max-width:52ch}
+.t3-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.t3-stats>div{background:var(--white);border:2px solid var(--ink);border-radius:12px;padding:14px 14px 12px}
+.t3-stats .num{display:block;font:900 clamp(28px,3.2vw,40px)/1 var(--display);color:var(--sage);letter-spacing:-.02em}
+.t3-stats b{display:block;margin-top:6px;font-weight:800;font-size:14.5px}
+.t3-stats .sub{display:block;margin-top:3px;font-size:12.8px;line-height:1.4;opacity:.8}
+.t3-copy .t3-li{margin:16px 0 0;font-size:14px;max-width:none}
+.t3-foot{margin:14px 0 0;padding-top:12px;border-top:2px dashed rgba(35,42,38,.25);font-size:13px;line-height:1.5;opacity:.8}
+.t3-chart{display:flex;flex-direction:column}.t3-chart .chart-body{flex:1}
+.mg{margin-bottom:18px}.mg:last-child{margin-bottom:6px}
+.mg-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:7px}
+.mg-h b{font:800 12px/1 var(--display);letter-spacing:.1em;text-transform:uppercase}
+.mg-h span{font-size:12.5px;opacity:.65}
+.mrow{display:grid;grid-template-columns:92px 1fr 52px;align-items:center;gap:8px;margin:5px 0;font-size:13.5px}
+.mrow .mt{display:block;height:14px;border-radius:4px;background:var(--mint);overflow:hidden}
+.mrow .mv{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.mrow.me .mv{font:900 16px/1 var(--display)}
+.bfill.mut{background:#9DB2A4}
+.brow:hover .bfill.mut,.brow:focus-visible .bfill.mut{background:var(--ink)}
+.charts.armed .mt .bfill{width:0}
+.charts.armed.in .mt .bfill{width:var(--w)}
+.t3-chart .mt .bfill{display:block;height:100%;width:var(--w);transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+.t3.armed .mt .bfill{width:0}.t3.armed.in .mt .bfill{width:var(--w)}
+@media (max-width:1000px){.t3{grid-template-columns:1fr}}
+@media (max-width:560px){.t3-stats{grid-template-columns:1fr}.mrow{grid-template-columns:84px 1fr 48px}}
+
+.sitevid{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center top;background:#fff}
+.sitepair .win{display:flex;flex-direction:column}.sitepair .win figure{flex:1;margin:0}
+
+.samaetrio{grid-template-columns:minmax(0,1.45fr) minmax(0,.9fr) minmax(0,1.45fr);align-items:center!important}
+.samaetrio .win figure>img{aspect-ratio:1240/698;object-fit:cover}
+.samaetrio .win:not(:nth-child(2)) figcaption{min-height:84px}
+@media (max-width:900px){.samaetrio{grid-template-columns:1fr}}
+
+/* business card */
+.contact-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.contact-grid .big{font-size:clamp(38px,5.6vw,82px);line-height:.94}
+.cardscene{perspective:1400px;justify-self:end;width:min(100%,520px)}
+.tilt{transform-style:preserve-3d;transition:transform .25s ease-out;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.flip{position:relative;aspect-ratio:7/4;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.8,.2,1);cursor:pointer;outline:none;border-radius:16px}
+.flip.flipped{transform:rotateY(180deg)}
+.flip:focus-visible{box-shadow:0 0 0 4px var(--blush)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:2px solid var(--ink);border-radius:16px;box-shadow:8px 8px 0 var(--ink);display:flex;overflow:hidden;color:var(--ink)}
+.face.front{background:var(--paper)}
+.face.back{background:var(--blush);transform:rotateY(180deg);align-items:center;justify-content:space-between;padding:22px 22px 18px}
+.cf-text{display:flex;flex-direction:column;justify-content:center;gap:6px;padding:22px 0 22px 24px;position:relative;z-index:1;min-width:0;max-width:60%}
+.cf-kicker{font:800 10.5px/1.25 var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+.cf-name{font:900 clamp(24px,3.7vw,42px)/.92 var(--display);text-transform:uppercase;letter-spacing:-.025em}
+.cf-sub{font:italic 400 19px/1.2 var(--script);margin-top:4px}
+.cf-lang{font:600 12.5px/1.3 var(--body);opacity:.75}
+.cf-photo{position:absolute;right:18px;bottom:0;width:36%;aspect-ratio:4/5.2;background:var(--sage);border:2px solid var(--ink);border-bottom:0;border-radius:999px 999px 0 0;overflow:hidden}
+.cf-photo img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:104%;width:auto;max-width:none}
+.cf-flip{position:absolute;left:24px;bottom:14px;font:800 10.5px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;opacity:.5}
+.cb-text{display:flex;flex-direction:column;gap:7px;min-width:0}
+.cb-title{font:900 clamp(26px,4vw,38px)/.95 var(--display);text-transform:uppercase;letter-spacing:-.02em;margin-bottom:6px}
+.cb-title em{font:italic 400 1.1em var(--script);text-transform:none;letter-spacing:0;color:var(--sage)}
+.cb-line{font:600 13.5px/1.3 var(--body);display:flex;flex-direction:column}
+.cb-line b{font:800 10px/1.2 var(--display);letter-spacing:.14em;text-transform:uppercase;opacity:.6;margin-bottom:1px}
+.cb-line a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;word-break:break-all}
+.cb-qr{display:flex;flex-direction:column;align-items:center;gap:6px;flex:0 0 auto}
+.cb-qr svg{display:block;width:clamp(92px,26%,112px);width:104px;height:104px;background:var(--white);padding:9px;border:2px solid var(--ink);border-radius:10px;box-sizing:content-box}
+.cb-qr span{font:800 10px/1 var(--display);letter-spacing:.12em;text-transform:uppercase}
+.cardhint{margin:22px 0 0;text-align:center;font-size:13.5px;opacity:.85}
+.peek .flip{animation:peek 1.6s ease-in-out .4s 1}
+@keyframes peek{0%,100%{transform:rotateY(0)}35%{transform:rotateY(-16deg)}65%{transform:rotateY(8deg)}}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:40px}.cardscene{justify-self:start;width:min(100%,440px)}}
+@media (max-width:420px){.cf-text{padding-left:16px}.cf-flip{left:16px}.face.back{padding:16px 14px 12px}.cb-qr svg{width:80px;height:80px;padding:7px}.cb-line{font-size:12.5px}}
+@media (prefers-reduced-motion:reduce){.flip,.tilt{transition:none}.peek .flip{animation:none}}
+.stdsite video{aspect-ratio:1100/618;object-fit:cover;background:#fff;width:100%;display:block}
+.stdpair{align-items:stretch}.stdpair .win figure{margin:0}
+.stdprint{align-items:stretch}
+.stdprint .win{display:flex;flex-direction:column}.stdprint .win figure{margin:0;flex:1}
+.stdprint .win figure>img{aspect-ratio:7/5;object-fit:cover;width:100%}
+
+.redtrio{align-items:stretch}
+.redtrio .win{display:flex;flex-direction:column}.redtrio .win figure{margin:0;display:flex;flex-direction:column;flex:1}
+.redtrio .win figure>img{aspect-ratio:4/5;object-fit:cover;width:100%;flex:0 0 auto}
+.redtrio .card.led{display:flex;flex-direction:column}
+.redtrio .card.led .muted{margin-top:auto;padding-top:14px;border-top:2px dashed rgba(35,42,38,.25)}
+.ledbig{margin:4px 0 12px;font:800 15px/1.2 var(--display);text-transform:uppercase;letter-spacing:.04em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ledbig span{font:900 clamp(56px,7vw,92px)/.9 var(--display);color:var(--sage);letter-spacing:-.03em;text-transform:none}
+@media (max-width:900px){.redtrio .win figure>img{aspect-ratio:4/3}}
+
+/* motion */
+.progress{position:fixed;top:0;left:0;right:0;height:4px;z-index:20;pointer-events:none}
+.progress i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--sage),var(--blush));transform-origin:0 50%;transform:scaleX(0)}
+.nav a.active{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:7px;text-decoration-color:var(--sage)}
+.marq{display:flex;overflow:hidden;white-space:nowrap;padding:12px 0;font:800 15px var(--display);text-transform:uppercase;letter-spacing:.06em}
+.marq-track{flex:0 0 auto;display:flex;min-width:100%;animation:marq 34s linear infinite}
+.marq-track span{padding-right:.4em}.marq-track i{font-style:normal;color:var(--blush);padding:0 .35em}
+.marq:hover .marq-track{animation-play-state:paused}
+@keyframes marq{to{transform:translateX(-100%)}}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1);transition-delay:var(--rd,0ms)}
+.rv.in{opacity:1;transform:none}
+.win,.card,.tool,.stat,.rs-tile,.chart,.t3-copy,.t3-stats>div{transition:transform .22s ease,box-shadow .22s ease}
+.win:hover,.card:hover,.stat:hover,.rs-tile:hover,.chart:hover,.t3-copy:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.tool:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.tool:hover .mono{animation:wob .6s ease}
+@keyframes wob{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg) scale(1.08)}60%{transform:rotate(6deg) scale(1.05)}}
+.t3-stats>div:hover{transform:translateY(-3px) rotate(-.6deg)}
+.pill{transition:transform .2s ease,background .2s ease}.pill:hover{transform:translateY(-2px) rotate(-1.5deg)}
+.hero-copy>*{animation:hup .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy>*:nth-child(1){animation-delay:.05s}.hero-copy>*:nth-child(2){animation-delay:.15s}.hero-copy>*:nth-child(3){animation-delay:.28s}.hero-copy>*:nth-child(4){animation-delay:.4s}.hero-copy>*:nth-child(5){animation-delay:.52s}
+@keyframes hup{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.arch{animation:archin 1s cubic-bezier(.2,.8,.2,1) .2s both}
+@keyframes archin{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+.arch img{will-change:transform}
+.tl li.rv.in::before{animation:dotpop .6s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes dotpop{from{transform:scale(0)}to{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){
+  .marq{justify-content:center}.marq-track{animation:none;min-width:0}.marq-track:nth-child(n+2){display:none}.marq-track span:nth-child(n+2){display:none}
+  .rv{opacity:1;transform:none;transition:none}.hero-copy>*,.arch{animation:none}.progress{display:none}
+  .win,.card,.tool,.stat,.rs-tile,.chart,.t3-copy{transition:none}.tool:hover .mono{animation:none}
+}
+
+@media (prefers-reduced-motion:reduce){.bfill{transition:none}}
+
+.facts{margin:0 0 38px}.facts .card{padding:18px 20px;box-shadow:5px 5px 0 var(--ink);color:var(--ink)}.band-ink .facts .card{box-shadow:5px 5px 0 var(--sage)}.facts .card h3{font-size:19px}.facts .card p{font-size:15.5px;line-height:1.55}
+.topic{font:900 clamp(26px,3.6vw,40px)/1 var(--display);text-transform:uppercase;letter-spacing:-.02em;margin:0 0 8px}.topic em{font:italic 400 1.1em var(--script);text-transform:none;letter-spacing:0;color:var(--sage)}
+.contact .big em{font:italic 400 1.1em var(--script);text-transform:none;letter-spacing:0;color:var(--blush)}
+.contact a.link,.contact button.link{display:inline-block;margin:6px 10px 6px 0;padding:12px 20px;border:2px solid var(--paper);border-radius:999px;font:700 17px var(--body);text-decoration:none}
+.contact button.link{font:700 17px var(--body);color:var(--paper)}
+.contact a.link:hover,.contact button.link:hover{background:var(--blush);color:var(--ink);border-color:var(--blush)}
+footer{background:var(--ink);color:var(--paper);padding:0 0 28px;font-size:13px}
+footer .wrap{border-top:1px solid rgba(255,255,255,.2);padding-top:18px}
+
+@media (max-width:900px){
+  .hero .wrap{grid-template-columns:1fr}
+  .arch{max-width:420px;margin:0 auto;width:100%}
+  .g3,.cgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  section{padding:52px 0}
+  .g2,.g3,.g4,.cgrid{grid-template-columns:1fr}
+  .toc a{grid-template-columns:36px 1fr}
+  .toc .d{grid-column:2}
+  .tools td:first-child{white-space:normal}
+  .nav ul{gap:12px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* language switcher */
+.lang{display:inline-flex;flex:none;border:2px solid var(--ink);border-radius:999px;overflow:hidden;background:var(--white);position:static}
+.lang button{font:800 12px/1 var(--display);letter-spacing:.06em;padding:7px 11px;border:0;background:transparent;color:var(--ink);cursor:pointer}
+.lang button+button{border-left:2px solid var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.lang button:not([aria-pressed="true"]):hover{background:var(--mint)}
+.lang button:focus-visible{outline:3px solid var(--sage);outline-offset:-3px}
+@media (max-width:700px){
+  .nav .wrap{gap:12px}
+  .nav b{display:none}
+  .lang{order:-1;position:sticky;left:0;right:auto;z-index:1;box-shadow:10px 0 0 var(--paper)}
+  .lang button{padding:7px 10px}
+}
+/* business card name: slightly smaller, never split a word */
+.cf-name{font-size:clamp(21px,3.2vw,37px);overflow-wrap:normal;hyphens:none;word-break:normal}
+/* Korean */
+html[lang="ko"]{--display:"Archivo","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;--script:"Instrument Serif","Noto Serif KR","AppleMyungjo",serif;--body:"Figtree","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+html[lang="ko"] body{word-break:keep-all;line-height:1.7}
+html[lang="ko"] :is(h1,h2,h3,h4,.disp,.hello,.role,.sec-head .no,.toc .t,.cf-name,.cb-title,.contact .big,.tl b,.slide h4,.t3-copy h3,.chart-body h4,.card h3,.rs-big b,.tools td:first-child){line-height:1.2;letter-spacing:0;word-break:keep-all}
+html[lang="ko"] :is(em,.scr,.cf-sub,.strip i){font-style:normal;font-weight:700}
+html[lang="ko"] :is(.eyebrow,.spec,.tools th,.tl .when,.cf-kicker,.cf-flip,.cb-line b,.cb-qr span,.rs-kicker,.chart-bar,.mg-h b,.win-bar,.slide .tag){letter-spacing:.02em}
+html[lang="ko"] .name-script{font-style:italic;font-weight:400}
+/* Russian */
+html[lang="ru"]{--display:"Archivo","Onest","Arial Black",Arial,sans-serif;--script:"Instrument Serif","Playfair Display","Times New Roman",serif;--body:"Figtree","Onest","Helvetica Neue",Arial,sans-serif}
+html[lang="ru"] :is(h1,h2,h3,h4,.disp,.contact .big,.toc .t){hyphens:auto;overflow-wrap:break-word}
+html[lang="ru"] .cb-title{font-size:clamp(19px,3.2vw,32px);hyphens:none;overflow-wrap:normal;word-break:normal}
+html[lang="ru"] .cb-title em{font-size:1em}
+@media (max-width:420px){html[lang="ru"] .cb-title{font-size:17px}}
+@media (max-width:340px){html[lang="ru"] .cb-title{font-size:14px}}
+html[lang="ru"] :is(.sec-head h2){font-size:clamp(30px,4.9vw,62px)}
+html[lang="ru"] .contact .big{font-size:clamp(30px,7vw,104px);hyphens:manual}
+html[lang="ru"] :is(.eyebrow,.spec,.tools th,.tl .when,.cf-kicker,.cf-flip,.cb-line b,.cb-qr span,.rs-kicker,.mg-h b){letter-spacing:.04em}
+html[lang="ru"] :is(.disp,.sec-head h2,.card h3,.slide h4,.t3-copy h3,.toc .t,.cb-title,.cf-name,.contact .big){letter-spacing:-.015em}
+</style>
+</head>
+<body>
+<div aria-hidden="true" class="progress"><i id="progbar"></i></div>
+<nav aria-label="Sections" class="nav" data-i18n-attr="aria-label:t001">
+<div class="wrap">
+<b data-i18n="t002">SG.</b>
+<ul>
+<li><a data-i18n="t003" href="#skills">Skills</a></li>
+<li><a data-i18n="t004" href="#path">Path</a></li>
+<li><a data-i18n="t005" href="#social">CompassNet</a></li>
+<li><a data-i18n="t006" href="#red">R:ED</a></li>
+<li><a data-i18n="t007" href="#standart">Standart</a></li>
+<li><a data-i18n="t008" href="#more">Other projects</a></li>
+<li><a data-i18n="t009" href="#why">Why Akradex</a></li>
+<li><a data-i18n="t010" href="#concepts">Ideas</a></li>
+<li><a data-i18n="t011" href="#contact">Contact</a></li>
+</ul>
+<div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:tL"><button type="button" data-lang="en" lang="en" aria-label="English" aria-pressed="true">EN</button><button type="button" data-lang="ko" lang="ko" aria-label="한국어" aria-pressed="false">KO</button><button type="button" data-lang="ru" lang="ru" aria-label="Русский" aria-pressed="false">RU</button></div>
+</div>
+</nav>
+<header class="hero" id="top">
+<div class="wrap">
+<div class="hero-copy">
+<h1>
+<span class="name-script scr" data-i18n="t013">Sofiia</span>
+<span class="name-heavy disp" data-i18n="t014">Gorpenko</span>
+</h1>
+<p class="role" data-i18n="t015">Digital marketing specialist</p>
+<p class="lead" data-i18n="t016">I make complex products easy to understand, and I love learning what moves people: what they notice, trust and remember. My path is not linear: it began with a world title in mobile robotics and has run through the industries of fintech, gaming, logistics and event planning, in English, Russian and Korean. That range is my biggest strength, because each new industry has taught me to learn quickly and to understand a new audience.</p>
+<div class="chips">
+<span class="pill b" data-i18n="t017">Seoul, South Korea</span>
+<span class="pill y" data-i18n="t018">Russian · English · Korean</span>
+<span class="pill" data-i18n="t019">Yonsei University</span>
+</div>
+</div>
+<div aria-label="Portrait of Sofiia Gorpenko" class="arch" data-i18n-attr="aria-label:t020">
+<img alt="Sofiia Gorpenko, arms crossed, looking to the side" data-i18n-attr="alt:t021" height="1300" src="assets/portrait.png" width="1000"/>
+</div>
+</div>
+</header>
+<div aria-label="Digital marketing, Event marketing, Branding, Analytics, UX/UI Design, Copywriting" class="strip marq" data-i18n-attr="aria-label:t022"><div aria-hidden="true" class="marq-track"><span data-i18n="t023">Digital marketing <i>·</i> Event marketing <i>·</i> Branding <i>·</i> Analytics <i>·</i> UX/UI Design <i>·</i> Copywriting <i>·</i> </span><span data-i18n="t023">Digital marketing <i>·</i> Event marketing <i>·</i> Branding <i>·</i> Analytics <i>·</i> UX/UI Design <i>·</i> Copywriting <i>·</i> </span><span data-i18n="t023">Digital marketing <i>·</i> Event marketing <i>·</i> Branding <i>·</i> Analytics <i>·</i> UX/UI Design <i>·</i> Copywriting <i>·</i> </span></div><div aria-hidden="true" class="marq-track"><span data-i18n="t023">Digital marketing <i>·</i> Event marketing <i>·</i> Branding <i>·</i> Analytics <i>·</i> UX/UI Design <i>·</i> Copywriting <i>·</i> </span><span data-i18n="t023">Digital marketing <i>·</i> Event marketing <i>·</i> Branding <i>·</i> Analytics <i>·</i> UX/UI Design <i>·</i> Copywriting <i>·</i> </span><span data-i18n="t023">Digital marketing <i>·</i> Event marketing <i>·</i> Branding <i>·</i> Analytics <i>·</i> UX/UI Design <i>·</i> Copywriting <i>·</i> </span></div></div>
+<section id="contents">
+<div class="wrap">
+<div class="sec-head"><h2 data-i18n="t024">Table of <em>contents</em></h2></div>
+<ol class="toc">
+<li><a href="#skills"><span class="n">1</span><span class="t" data-i18n="t025">Skills &amp; tools</span><span class="d" data-i18n="t026">Tools with honest levels, skills, and where each one is shown.</span></a></li>
+<li><a href="#path"><span class="n">2</span><span class="t" data-i18n="t027">My path</span><span class="d" data-i18n="t028">A non-linear path, and why it is a strength.</span></a></li>
+<li><a href="#social"><span class="n">3</span><span class="t" data-i18n="t029">Case: CompassNet</span><span class="d" data-i18n="t030">Posts, copywriting, press articles, videos and analytics for three brands.</span></a></li>
+<li><a href="#red"><span class="n">4</span><span class="t" data-i18n="t031">Case: R:ED</span><span class="d" data-i18n="t032">Public face, Instagram and partnerships, 2020 to 2023.</span></a></li>
+<li><a href="#standart"><span class="n">5</span><span class="t" data-i18n="t033">Case: Standart</span><span class="d" data-i18n="t034">Logo, website, print and a company deck.</span></a></li>
+<li><a href="#more"><span class="n">6</span><span class="t" data-i18n="t008">Other projects</span><span class="d" data-i18n="t035">Product design, websites, presentations and reports.</span></a></li>
+<li><a href="#influence"><span class="n">7</span><span class="t" data-i18n="t036">Influencers &amp; PR</span><span class="d" data-i18n="t037">Experience so far, and a plan for Akradex.</span></a></li>
+<li><a href="#why"><span class="n">8</span><span class="t" data-i18n="t009">Why Akradex</span><span class="d" data-i18n="t038">Where my experience matches the role.</span></a></li>
+<li><a href="#concepts"><span class="n">9</span><span class="t" data-i18n="t039">Ideas for Akradex</span><span class="d" data-i18n="t040">Five content concept ideas from me.</span></a></li>
+</ol>
+</div>
+</section>
+<!-- 1 SKILLS -->
+<section class="band-sky" id="skills">
+<div class="wrap">
+<div class="sec-head"><span class="no">1</span><h2 data-i18n="t041">Skills <em>&amp; tools</em></h2></div>
+<p class="intro wide" data-i18n="t042">The tools I use, the skills behind them, and where each one is shown in this portfolio. Tool levels are stated as they are, and anything I have not done yet is marked.</p>
+<div class="tiles">
+<div class="tool"><span class="mono" data-i18n="t043">Ca</span><b data-i18n="t044">Canva</b><span class="lvl s" data-i18n="t045">Strong</span><p data-i18n="t046">My main design tool: social posts, presentations, reports, print and video.</p></div>
+<div class="tool"><span class="mono" data-i18n="t047">Fi</span><b data-i18n="t048">Figma</b><span class="lvl s" data-i18n="t045">Strong</span><p data-i18n="t049">App and website prototypes, with components and shared styles.</p></div>
+<div class="tool"><span class="mono" data-i18n="t050">Cu</span><b data-i18n="t051">CapCut</b><span class="lvl g" data-i18n="t052">Good</span><p data-i18n="t053">Short-form edits for social video.</p></div>
+<div class="tool"><span class="mono" data-i18n="t054">AI</span><b data-i18n="t055">ChatGPT &amp; Claude</b><span class="lvl g" data-i18n="t056">Daily use</span><p data-i18n="t057">Content calendars, scheduling and first drafts, which I always rewrite and fact-check.</p></div>
+<div class="tool off"><span class="mono" data-i18n="t058">Pr</span><b data-i18n="t059">Premiere Pro</b><span class="lvl n" data-i18n="t060">Not yet</span><p data-i18n="t061">Not used yet. CapCut covers my editing needs for now.</p></div>
+<div class="tool off"><span class="mono" data-i18n="t062">Il</span><b data-i18n="t063">Illustrator</b><span class="lvl n" data-i18n="t060">Not yet</span><p data-i18n="t064">Not used yet. My print layouts so far are made in Canva.</p></div>
+</div>
+<div class="grid g2 skillcols" style="align-items:start;margin-top:36px">
+<div class="card"><h3 data-i18n="t065">Marketing &amp; <em>analytics skills</em></h3>
+<ul class="sk">
+<li><b data-i18n="t066">Data &amp; analytics</b><span data-i18n="t067">Tracking how accounts perform across three brands, reading what drives engagement, and working on the annual marketing reports. <a href="#social">Section 3</a> · <a href="#more">Section 6</a></span></li>
+<li><b data-i18n="t068">Excel &amp; spreadsheets</b><span data-i18n="t069">Tracking, reporting and data analysis for marketing accounts.</span></li>
+<li><b data-i18n="t070">SEO &amp; paid advertising</b><span data-i18n="t071">Working knowledge of SEO. I have not yet run paid search or paid social campaigns myself, and I would build that experience with Akradex’s channels.</span></li>
+<li><b data-i18n="t072">Marketing automation &amp; CRM</b><span data-i18n="t073">Email marketing and CRM-based customer engagement: nurturing leads and following the customer journey across channels.</span></li>
+<li><b data-i18n="t074">Web &amp; tech literacy</b><span data-i18n="t075">Built and launched websites on Tilda and Vigbo and prototyped sites in Figma, so I can set up and test landing pages quickly. Basic Python and JavaScript. <a href="#standart">Section 5</a></span></li>
+<li><b data-i18n="t076">Influencer search &amp; outreach</b><span data-i18n="t077">Market analysis, influencer search and outreach at StoryTaco, and a four-step plan for how I would run influencer work for Akradex. <a href="#influence">Section 7</a></span></li>
+</ul></div>
+<div class="card"><h3 data-i18n="t078">Creative &amp; <em>strategic skills</em></h3>
+<ul class="sk">
+<li><b data-i18n="t079">Copywriting &amp; storytelling</b><span data-i18n="t080">Captions, announcements and scripts with a clear structure, written for Terminal3 and Paymentwall and adapted to the platform and audience. I also wrote news articles about the brands’ events and news and sent them to newspapers. At R:ED I told a brand story through my own background as a world champion. <a href="#social">Section 3</a></span></li>
+<li><b data-i18n="t081">Social media &amp; video content</b><span data-i18n="t082">Platform-native posts on Instagram and LinkedIn, event photography and short-form video, from content calendars to recaps. Explainer videos and loops with the Terminal3 team, plus quick edits in CapCut. <a href="#social">Section 3</a></span></li>
+<li><b data-i18n="t083">AI &amp; workflow adaptability</b><span data-i18n="t084">ChatGPT and Claude daily for research, scheduling, draft variations and first drafts. I rewrite and fact-check everything; strategy and brand voice stay with me.</span></li>
+<li><b data-i18n="t085">Design &amp; UX thinking</b><span data-i18n="t086">Clean layout, visual hierarchy and user-first thinking applied to posts, decks, print and websites, with one template system per brand. The Samae student app was tested with about 30 users. <a href="#more">Section 6</a> · <a href="#standart">Section 5</a></span></li>
+</ul></div>
+</div>
+<div class="grid g2" style="align-items:start;margin-top:32px">
+<div class="card"><h3 data-i18n="t087">Expertise, <em>what I bring</em></h3>
+<ul class="sk">
+<li><b data-i18n="t088">Explaining technical products</b><span data-i18n="t089">Robotics for schools and institutes at R:ED, and B2B marketing &amp; payment products for companies of several industries at CompassNet. Beauty science &amp; cosmetics should be the next subject.</span></li>
+<li><b data-i18n="t090">Events</b><span data-i18n="t091">Event-led social content in several languages: announce before the show, cover it on site, recap afterwards. <a href="#social">Section 3</a></span></li>
+<li><b data-i18n="t092">PR and branding</b><span data-i18n="t093">Two years as the public face of R:ED, where I also worked on the rebrand and on PR aimed at partners and trust rather than follower count. At CompassNet I handled all marketing in Korea, including localised PR: I wrote the news articles and sent them to newspapers, alongside offline events. I also kept each brand to one visual system, from social posts to print. <a href="#red">Section 4</a> · <a href="#social">Section 3</a></span></li>
+<li><b data-i18n="t094">Emerging into new industries</b><span data-i18n="t095">Four industries so far, each learned well enough to explain to its customers. <a href="#path">Section 2</a></span></li>
+<li><b data-i18n="t096">Understanding people</b><span data-i18n="t097">Consumer behaviour and brand management at Yonsei, persuasive writing and public speaking through HarvardX, and two years of presenting to live audiences. I enjoy learning what motivates people, and I use it to write, design and plan content. <a href="#path">Section 2</a></span></li>
+<li><b data-i18n="t098">Languages</b><span data-i18n="t099">Russian native, English IELTS C1, Korean TOPIK 4.</span></li>
+</ul></div>
+<div class="card">
+<h3 data-i18n="t100">On <em>camera</em></h3>
+<p data-i18n="t101">I am comfortable on camera. For two years I presented for R:ED at events, workshops, competitions and livestreams, and I took event photos for Terminal3. I have made little vertical short-form video so far, because TikTok was not a common channel for fintech brands, although I pushed to add it. Developing this skill with a brand where it fits is my main goal.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 2 PATH -->
+<section id="path">
+<div class="wrap">
+<div class="sec-head"><span class="no">2</span><h2 data-i18n="t102">My <em>path</em></h2></div>
+<p class="intro wide" data-i18n="t103">My background spans robotics, game payments, logistics and event agencies. It is not a straight line, and I treat that as my biggest strength. The common thread is the same in every role: learn the product quickly, explain it clearly, and keep the brand consistent wherever it appears.</p>
+<div class="grid g4 facts">
+<div class="card"><h3 data-i18n="t104">Quick to <em>learn</em></h3><p data-i18n="t105">I have started from zero in four industries, and in each one I ended up explaining the product to its customers. Getting up to speed on beauty science and cosmetics is a task I know how to approach.</p></div>
+<div class="card"><h3 data-i18n="t106">Analyze what <em>carries over</em></h3><p data-i18n="t107">A clear structure for announcements, one visual system and honest explanations worked in robotics, payments and logistics alike. I know which parts of a brand’s communication stay constant and which change with the audience.</p></div>
+<div class="card"><h3 data-i18n="t108">People <em>first</em></h3><p data-i18n="t109">Marketing is a conversation with people, so I study how they think, feel and decide. I enjoy learning the small things that build trust, and I am at my best when I am meeting, listening and working with people.</p></div>
+<div class="card"><h3 data-i18n="t110">Several skills, <em>one person</em></h3><p data-i18n="t111">Design in Canva and Figma, copywriting, analytics, on-camera work and three languages. That lets me take a piece of content from idea to published post with fewer hand-offs.</p></div>
+</div>
+<div class="grid g2" style="align-items:start;margin-top:8px">
+<ul class="tl">
+<li><span class="when">2017</span><b data-i18n="t112">World champion</b><span data-i18n="t113">Winner of the Mobile Robotics category at WorldSkills Abu Dhabi.</span></li>
+<li><span class="when">2020 – 2023</span><b data-i18n="t114">R:ED, Saint Petersburg</b><span data-i18n="t115">Robotics ambassador, then project manager: public face of the brand, Instagram, rebrand and partnerships.</span></li>
+<li><span class="when">2021 – 2025</span><b data-i18n="t019">Yonsei University</b><span data-i18n="t116">Degrees in Creative Technology Management and International Studies.</span></li>
+<li><span class="when" data-i18n="t117">Aug 2024 – Jan 2025</span><b data-i18n="t118">CompassNet, Seoul</b><span data-i18n="t119">Intern, then Digital Marketing Specialist for Terminal3, Paymentwall and FasterPay, and the only digital marketer in the company: content, copywriting, press articles, design and analytics.</span></li>
+<li><span class="when" data-i18n="t120">Then</span><b data-i18n="t121">StoryTaco and freelance</b><span data-i18n="t122">Market analysis and influencer search at StoryTaco; websites, brochures and presentations for small businesses.</span></li>
+</ul>
+<div class="card">
+<h3 data-i18n="t123">Languages <em>&amp; study</em></h3>
+<ul>
+<li data-i18n="t124">Russian: native</li>
+<li data-i18n="t125">English: IELTS C1</li>
+<li data-i18n="t126">Korean: TOPIK Level 4</li>
+<li data-i18n="t127">HarvardX: Rhetoric, the Art of Persuasive Writing and Public Speaking</li>
+<li data-i18n="t128">Yonsei project: “K-Culture and the World”, analysis of the Korean beauty industry</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- 2 TERMINAL3 -->
+<section class="band-ink" id="social">
+<div class="wrap">
+<div class="sec-head"><span class="no">3</span><h2 data-i18n="t129">Case: <em>CompassNet</em></h2></div>
+<div class="meta"><span class="pill y" data-i18n="t130">CompassNet · Seoul</span><span class="pill" data-i18n="t131">Digital Marketing Specialist (promoted from intern)</span><span class="pill" data-i18n="t117">Aug 2024 – Jan 2025</span><span class="pill" data-i18n="t132">Instagram</span><span class="pill" data-i18n="t133">LinkedIn</span><span class="pill" data-i18n="t134">Copywriting</span><span class="pill" data-i18n="t135">PR</span><span class="pill" data-i18n="t136">Video</span><span class="pill" data-i18n="t044">Canva</span></div>
+<p class="intro wide" data-i18n="t137">At CompassNet I handled marketing for three sister brands in the payments sector: Terminal3, Paymentwall and FasterPay. Terminal3, a game-payments company, was my main account.</p>
+<div class="grid g3 facts">
+<div class="card"><h3 data-i18n="t138">My <em>role</em></h3><p data-i18n="t139">Digital Marketing Specialist in Seoul, promoted from an internship. I was the only person on digital marketing worldwide and handled all marketing in Korea. Around me were two event marketers abroad and a marketing manager abroad who reviewed the work I reported. Terminal3 was my main account.</p></div>
+<div class="card"><h3 data-i18n="t140">What I <em>did</em></h3><p data-i18n="t141">Ran Instagram and LinkedIn for all three brands on my own, mainly Terminal3, and wrote the captions: event announcements, speaker promotions, recaps and holiday posts, all within one visual system. On the PR side I wrote the news articles for the brands and sent them to newspapers. Proposed the unicorn mascot that now appears across Terminal3’s photos and videos. Took and edited event photos, contributed to explainer videos, made the Book of Magic partner gift from start to finish (design, text and photo editing) and refreshed FasterPay’s feed. Tracked account performance for all three brands and worked on the annual marketing report; headline results are in the results block of this case.</p></div>
+<div class="card"><h3 data-i18n="t142">Why it <em>fits Akradex</em></h3><p data-i18n="t143">Akradex exhibits at trade shows such as Cosmoprof and Vietbeauty. At CompassNet I worked the same cycle: announce before the event, cover it on site and recap afterwards, in several languages. The copy followed a fixed structure: where we are, what a visitor can expect and how to book a meeting. I have worked on both Instagram and LinkedIn, which matters for a brand that needs a professional voice as well as a consumer-facing one. I have also explained a technical product in short video. I did this as the only digital marketer in the company, so planning, writing, designing, publishing and reporting were all in my hands, with a manager reviewing the results.</p></div>
+</div>
+<div class="sec-head" style="margin-top:8px"><h2 data-i18n="t144" style="font-size:clamp(28px,4vw,52px)">Terminal3 <em>posts</em></h2></div>
+<div class="grid g3">
+<div class="win rel"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t145">Event announcement</span></div>
+<figure><img alt="Terminal3 announcement card for the G-Star show in Busan, 14 to 16 November, booth K-703" data-i18n-attr="alt:t146" loading="lazy" src="assets/t3_gstar_announce.jpg"/>
+<figcaption data-i18n="t147"><b>G-Star, Busan</b>Announcement card with dates, booth number and a bilingual caption in English and Korean.</figcaption></figure></div>
+<div class="win rel"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t145">Event announcement</span></div>
+<figure><img alt="Terminal3 announcement card for GamesBeat Next, San Francisco, 28 to 29 October" data-i18n-attr="alt:t148" loading="lazy" src="assets/t3_gamesbeat.jpg"/>
+<figcaption data-i18n="t149"><b>GamesBeat Next, San Francisco</b>The same template with a new city and dates, so every event is recognisable as Terminal3.</figcaption></figure></div>
+<div class="win rel"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t145">Event announcement</span></div>
+<figure><img alt="Terminal3 announcement card for Games Gathering, Kyiv, 6 to 8 December" data-i18n-attr="alt:t150" loading="lazy" src="assets/t3_kyiv.jpg"/>
+<figcaption data-i18n="t151"><b>Games Gathering, Kyiv</b>Announcement, followed by a recap post after the event.</figcaption></figure></div>
+</div>
+<div class="grid g3" style="margin-top:28px">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t152">Speaker promo</span></div>
+<figure><img alt="Terminal3 speaker session card with a portrait, session title, date and stage" data-i18n-attr="alt:t153" loading="lazy" src="assets/t3_session.jpg"/>
+<figcaption data-i18n="t154"><b>Session promo, Mobidictum</b>Speaker, topic, time and stage on a single card.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t155">Event photo</span></div>
+<figure><img alt="Terminal3 team standing in front of the booth at G-Star" data-i18n-attr="alt:t156" loading="lazy" src="assets/t3_gstar_team.jpg"/>
+<figcaption data-i18n="t157"><b>G-Star booth team</b>Photo and edit: me.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t158">Holiday post</span></div>
+<figure><img alt="Terminal3 Merry Christmas post with a tree built from isometric blocks and a game controller" data-i18n-attr="alt:t159" loading="lazy" src="assets/t3_xmas.jpg"/>
+<figcaption data-i18n="t160"><b>Holiday post</b>Seasonal post in brand colours: a Christmas tree built from isometric blocks, with a game controller.</figcaption></figure></div>
+</div>
+<div class="grid g3" style="margin-top:28px">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t161">Recap post</span></div>
+<figure><img alt="Terminal3 team posing in a ball pit at the Gamescom booth with the unicorn mascot" data-i18n-attr="alt:t162" loading="lazy" src="assets/t3_gamescom.jpg"/>
+<figcaption data-i18n="t163"><b>Gamescom recap</b>Recap post: the team and the mascot at the booth.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t161">Recap post</span></div>
+<figure><img alt="Wide-angle photo of the Terminal3 party with the unicorn mascot among guests" data-i18n-attr="alt:t164" loading="lazy" src="assets/t3_party2.jpg"/>
+<figcaption data-i18n="t165"><b>Cologne party</b>Carousel recap of the evening event, with the DJ, performers and the mascot.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t166">Short video</span></div>
+<figure><img alt="Frame from the Terminal3 New Year clip: a unicorn astronaut riding a rocket in a platformer game scene" data-i18n-attr="alt:t167" loading="lazy" src="assets/t3_newyear.jpg"/>
+<figcaption data-i18n="t168"><b>New Year clip, 8 seconds</b>Short game-style loop with the unicorn mascot. Team project; I contributed.</figcaption></figure></div>
+</div>
+<div class="card" style="margin-top:28px;color:var(--ink)"><h3 data-i18n="t169">The mascot was <em>my idea</em></h3><p data-i18n="t170">The unicorn that appears in Terminal3’s photos and videos started as my proposal, and it was approved. Since then it has become a core part of the brand: it appears online in the posts and clips, and people now look forward to seeing it in person at the events. For me it is a good example of how one character can give a B2B payments brand a face that people remember.</p></div>
+<div class="sec-head" style="margin-top:56px"><h2 data-i18n="t171" style="font-size:clamp(28px,4vw,52px)">Terminal3 <em>copywriting</em></h2></div>
+<p class="intro" data-i18n="t172">Captions I wrote for Terminal3 posts, as published.</p>
+<div class="grid g2" style="align-items:start">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t173">Caption · G-Star</span></div>
+<figure><img alt="Caption of the Terminal3 G-Star post, written in English and Korean, with dates, booth number and a contact address" data-i18n-attr="alt:t174" loading="lazy" src="assets/cap_t3_gstar.jpg"/><figcaption data-i18n="t175"><b>G-Star, English and Korean</b>One caption for two audiences: dates, booth number and how to get in touch, in English and Korean.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t176">Caption · Mobidictum</span></div>
+<figure><img alt="Caption of the Terminal3 post promoting two sessions at Mobidictum, with speakers, topics, dates and stages" data-i18n-attr="alt:t177" loading="lazy" src="assets/cap_t3_mobidictum.jpg"/><figcaption data-i18n="t178"><b>Two sessions, one post</b>Two sessions in one post: speaker, topic, time and stage, closing with a clear call to action.</figcaption></figure></div>
+</div>
+<p class="note" data-i18n="t179" style="margin-top:34px"><b>About numbers.</b> Detailed account metrics are covered by an NDA, so this part of the page shows the work itself. The headline results from the 2024 annual report are summarised at the end of this case, and I can explain in an interview how I tracked and reported results.</p>
+<div class="sec-head" style="margin-top:64px"><h2 data-i18n="t180" style="font-size:clamp(28px,4vw,52px)">Terminal3 <em>explainer videos</em></h2></div>
+<p class="intro wide" data-i18n="t181">Three animated explainers of 70 to 85 seconds each, built in Canva from Terminal3’s brand assets and made together with the Terminal3 team. Every video follows the same structure: a title card, one benefit headline, one line of copy and one product visual, so a complex payment product is explained one idea at a time. They are in landscape format; my plan for vertical versions is in section 9.</p>
+<div class="grid g3">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t182">Explainer 1</span></div>
+<figure><video aria-label="Short loop from the Terminal3 explainer about checkout" autoplay="" data-i18n-attr="aria-label:t183" loop="" muted="" playsinline="" preload="metadata" src="assets/clip_t3v1.mp4"></video>
+<figcaption data-i18n="t184"><b>Why Terminal3 and Game Pay</b>Checkout on every platform, worldwide payments and a customised checkout.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t185">Explainer 2</span></div>
+<figure><img alt="Frame from the Terminal3 explainer: One store, all devices, with product mockups" data-i18n-attr="alt:t186" loading="lazy" src="assets/vid2_store.jpg"/>
+<figcaption data-i18n="t187"><b>Webshop and Game Station</b>Selling directly: one store across all devices.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t188">Explainer 3</span></div>
+<figure><video aria-label="Short loop from the Terminal3 explainer about merchant of record" autoplay="" data-i18n-attr="aria-label:t189" loop="" muted="" playsinline="" preload="metadata" src="assets/clip_t3v3.mp4"></video>
+<figcaption data-i18n="t190"><b>Merchant of record</b>Local and global compliance, explained step by step.</figcaption></figure></div>
+</div>
+<div class="sec-head" style="margin-top:64px"><h2 data-i18n="t191" style="font-size:clamp(28px,4vw,52px)">Terminal3 <em>Book of Magic</em></h2></div>
+<p class="intro" data-i18n="t192">A partner gift booklet for Terminal3’s annual PR, part of a larger gift sent to companies the team worked with around the world. The whole book, front to back, was made by me: the design, the text and the photo editing. Below are three of its pages: the cover, a “magical objects” page and an event photo album.</p>
+<div class="grid g3" style="align-items:start;max-width:900px">
+<div class="win"><figure><img alt="Book of Magic cover in black and gold with a unicorn and crystals" data-i18n-attr="alt:t193" loading="lazy" src="assets/magic_cover.jpg"/><figcaption><b data-i18n="t194">Cover</b></figcaption></figure></div>
+<div class="win"><figure><img alt="Book of Magic page with healing crystals, evil eye and herbal candle illustrations" data-i18n-attr="alt:t195" loading="lazy" src="assets/magic_objects.jpg"/><figcaption><b data-i18n="t196">Magical objects</b></figcaption></figure></div>
+<div class="win"><figure><img alt="Book of Magic photo album page with event photos on a yellow background" data-i18n-attr="alt:t197" loading="lazy" src="assets/magic_album.jpg"/><figcaption><b data-i18n="t198">Photo album</b></figcaption></figure></div>
+</div>
+</div>
+</section>
+<!-- 3 PAYMENTWALL & FASTERPAY -->
+<section id="paymentwall">
+<div class="wrap">
+<div class="sec-head"><h2 data-i18n="t199">Paymentwall <em>&amp; FasterPay</em></h2></div>
+<div class="meta"><span class="pill y" data-i18n="t200">CompassNet · sister brands</span><span class="pill" data-i18n="t134">Copywriting</span><span class="pill" data-i18n="t201">Analytics</span><span class="pill" data-i18n="t132">Instagram</span><span class="pill" data-i18n="t133">LinkedIn</span></div>
+<p class="intro wide" data-i18n="t202">Terminal3’s sister brands. My main work on both was analytics. I also wrote post captions for Paymentwall and refreshed FasterPay’s Instagram feed.</p>
+<h3 class="topic" data-i18n="t203">Paymentwall <em>copywriting</em></h3>
+<p class="intro" data-i18n="t204">Captions from the Paymentwall account as published on Instagram: a countdown announcement, a post-event recap, a short event notice and a holiday greeting. They share one logic: what is happening, why a visitor should come, and how to book a meeting.</p>
+<div class="grid g2" style="align-items:start">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t205">Announcement · Money 20/20</span></div>
+<figure><img alt="Caption of the Paymentwall post announcing Money 20/20 in Las Vegas, with a two-week countdown, an invitation to book a meeting and hashtags" data-i18n-attr="alt:t206" loading="lazy" src="assets/cap_pw_money_announce.jpg"/><figcaption data-i18n="t207"><b>Two weeks out</b>An announcement two weeks before the event: dates, what the company offers and how to book a meeting.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t208">Recap · Money 20/20</span></div>
+<figure><img alt="Caption of the Paymentwall recap post after Money 20/20, thanking visitors and mentioning a product launch for the Spanish-speaking market" data-i18n-attr="alt:t209" loading="lazy" src="assets/cap_pw_money_recap.jpg"/><figcaption data-i18n="t210"><b>After the show</b>A recap: thanks to visitors, one highlight and what comes next.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t211">Event notice · Paris Retail Week</span></div>
+<figure><img alt="Caption of the Paymentwall post for Paris Retail Week with a contact address for meetings" data-i18n-attr="alt:t212" loading="lazy" src="assets/cap_pw_paris.jpg"/><figcaption data-i18n="t213"><b>One week out</b>A notice one week before: where, why and how to book.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t214">Holiday · Lunar New Year</span></div>
+<figure><img alt="Caption of the Paymentwall Lunar New Year greeting for the Year of the Snake" data-i18n-attr="alt:t215" loading="lazy" src="assets/cap_pw_lunar.jpg"/><figcaption data-i18n="t216"><b>Holiday greeting</b>A holiday greeting in a warm, on-brand tone.</figcaption></figure></div>
+</div>
+<h3 class="topic" data-i18n="t217" style="margin-top:56px">FasterPay <em>feed refresh</em></h3>
+<p class="intro" data-i18n="t218">FasterPay was a new product. In the short time I had on the account, I gave its feed one card system for events plus seasonal posts, replacing mixed card styles and event snapshots.</p>
+<div class="grid g2">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t219">Before</span></div>
+<figure><img alt="FasterPay Instagram grid before the refresh: 2023 event cards and photos in mixed styles" data-i18n-attr="alt:t220" loading="lazy" src="assets/fp_before.jpg"/><figcaption data-i18n="t221"><b>Before</b>2023 posts: mixed card styles and event snapshots.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t222">After</span></div>
+<figure><img alt="FasterPay Instagram posts after the refresh: Merry Christmas card, booth photo, Uzakrota event card, Lunar New Year card and a holiday clip" data-i18n-attr="alt:t223" loading="lazy" src="assets/fp_after.jpg"/><figcaption data-i18n="t224"><b>After</b>Posts from my months on the account: one colour system, with holiday and event cards.</figcaption></figure></div>
+</div>
+<h3 class="topic" data-i18n="t225" style="margin-top:64px">2024 results <em>from the annual report</em></h3>
+<p class="intro wide" data-i18n="t226">These are results of the CompassNet marketing team for Paymentwall, Terminal3 and FasterPay in 2024, as stated in the annual marketing report (December 2024). My part was all of the digital marketing worldwide: Social Media Accounts, Analytics, PR, Branding.</p>
+<div class="rs-hero">
+<div class="rs-big"><span class="rs-kicker" data-i18n="t227">2024 · all three brands</span><span class="rs-num" data-count="149290">149,290</span><b data-i18n="t228">digital impressions</b><p data-i18n="t229">recorded across 2024, from the accounts I ran</p></div>
+<div class="rs-tile"><span class="num">37</span><b data-i18n="t230">global events attended</b><span class="sub" data-i18n="t231">run by the event team</span></div>
+<div class="rs-tile"><span class="num">+25%</span><b data-i18n="t232">social media engagement</b></div>
+<div class="rs-tile wide"><span class="num">+26.7%</span><b data-i18n="t233">LinkedIn followers</b><span class="sub" data-i18n="t234">across the three brands: 7,338 new followers, 27,529 in total</span></div>
+</div>
+<div class="t3">
+<div class="t3-copy">
+<span class="rs-kicker t3k" data-i18n="t235">Main account</span>
+<h3 data-i18n="t236">Terminal3 <em>in numbers</em></h3>
+<p data-i18n="t237">Terminal3 was the account I ran most, and the brand with the most events on the 2024 calendar. These are its figures from the annual report.</p>
+<div class="t3-stats">
+<div><span class="num">112</span><b data-i18n="t238">leads</b><span class="sub" data-i18n="t239">from GDC (57) and Gamescom (55), its two top conferences</span></div>
+<div><span class="num">1,053</span><b data-i18n="t240">accounts reached</b><span class="sub" data-i18n="t241">on Instagram in the last 90 days, +22.8%</span></div>
+<div><span class="num" data-i18n="t242">8×</span><b data-i18n="t243">reach vs followers</b><span class="sub" data-i18n="t244">1,053 reached by an account with 128 followers</span></div>
+<div><span class="num">53.5%</span><b data-i18n="t245">from non-followers</b><span class="sub" data-i18n="t246">of Instagram impressions came from people who did not follow the account</span></div>
+</div>
+<p class="t3-li" data-i18n="t247"><b>LinkedIn:</b> 31,691 impressions in 2024 and 280 new followers (+22%), taking the page to 1,268.</p>
+</div>
+<div class="chart t3-chart">
+<div class="chart-bar"><i></i><i></i><i></i><span data-i18n="t248">Terminal3 vs sister brands</span></div>
+<div class="chart-body">
+<h4 data-i18n="t249">Instagram <em>last 90 days</em></h4>
+<p class="cap" data-i18n="t250">Terminal3 had the largest figure of the three brands on each measure.</p>
+<div class="mg"><div class="mg-h"><b data-i18n="t251">Accounts reached</b><span data-i18n="t252">people who saw the content</span></div>
+<div class="mrow me"><span class="mn"><b data-i18n="t253">Terminal3</b></span><span class="mt"><i class="bfill" style="--w:100.0%"></i></span><span class="mv">1,053</span></div>
+<div class="mrow"><span class="mn" data-i18n="t254">FasterPay</span><span class="mt"><i class="bfill mut" style="--w:57.5%"></i></span><span class="mv">605</span></div>
+<div class="mrow"><span class="mn" data-i18n="t255">Paymentwall</span><span class="mt"><i class="bfill mut" style="--w:40.5%"></i></span><span class="mv">426</span></div>
+</div>
+<div class="mg"><div class="mg-h"><b data-i18n="t256">Impressions</b><span data-i18n="t257">times the content was shown</span></div>
+<div class="mrow me"><span class="mn"><b data-i18n="t253">Terminal3</b></span><span class="mt"><i class="bfill" style="--w:100.0%"></i></span><span class="mv">3,103</span></div>
+<div class="mrow"><span class="mn" data-i18n="t255">Paymentwall</span><span class="mt"><i class="bfill mut" style="--w:60.2%"></i></span><span class="mv">1,869</span></div>
+<div class="mrow"><span class="mn" data-i18n="t254">FasterPay</span><span class="mt"><i class="bfill mut" style="--w:38.8%"></i></span><span class="mv">1,205</span></div>
+</div>
+<div class="mg"><div class="mg-h"><b data-i18n="t258">Interactions</b><span data-i18n="t259">likes, comments and shares</span></div>
+<div class="mrow me"><span class="mn"><b data-i18n="t253">Terminal3</b></span><span class="mt"><i class="bfill" style="--w:100.0%"></i></span><span class="mv">185</span></div>
+<div class="mrow"><span class="mn" data-i18n="t255">Paymentwall</span><span class="mt"><i class="bfill mut" style="--w:52.4%"></i></span><span class="mv">97</span></div>
+<div class="mrow"><span class="mn" data-i18n="t254">FasterPay</span><span class="mt"><i class="bfill mut" style="--w:16.8%"></i></span><span class="mv">31</span></div>
+</div>
+<p class="t3-foot" data-i18n="t260">The Instagram accounts are small. Terminal3 ended 2024 with 128 followers (−3.8%), so these figures show reach, not audience size.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4 R:ED -->
+<section class="band-sage" id="red">
+<div class="wrap">
+<div class="sec-head"><span class="no">4</span><h2 data-i18n="t261">Case: <em>R:ED</em></h2></div>
+<div class="meta">
+<span class="pill y" data-i18n="t262">R:ED Robotics Education</span>
+<span class="pill" data-i18n="t263">Robotics ambassador, then project manager</span>
+<span class="pill" data-i18n="t264">Saint Petersburg · 2020 – 2023</span>
+</div>
+<div class="grid g3 facts">
+<div class="card"><h3 data-i18n="t138">My <em>role</em></h3><p data-i18n="t265">Robotics ambassador, then project manager, in Saint Petersburg. I joined straight after high school, having won the Mobile Robotics category at WorldSkills Abu Dhabi in 2017.</p></div>
+<div class="card"><h3 data-i18n="t140">What I <em>did</em></h3><p data-i18n="t266">Acted as the public face of the brand at events, workshops, competitions and livestreams. As project manager I worked with designers and developers, ran the rebrand and the Instagram account, and explained technical products to non-technical audiences.</p></div>
+<div class="card"><h3 data-i18n="t142">Why it <em>fits Akradex</em></h3><p data-i18n="t267">Two years of public speaking and on-camera work, and an Instagram account built for PR and trust instead of follower count. A medical brand has to communicate in a similar way.</p></div>
+</div>
+<div class="grid g3 redtrio" style="margin-top:34px">
+<div class="card led" style="color:var(--ink)">
+<h3 data-i18n="t268">What it <em>led to</em></h3>
+<p class="ledbig" data-i18n="t269"><span>~100</span> schools in Russia</p>
+<p data-i18n="t270">I invited schools and brands to work with the company. Over two years this contributed to partnerships with around 100 schools in Russia and to brand deals in Belarus and Poland.</p>
+<p class="small muted" data-i18n="t271">The account was built to win business partners, not followers.</p>
+</div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t272">Instagram feed</span></div>
+<figure><img alt="R:ED Instagram grid with a red mascot and illustrated graphics in one visual system" data-i18n-attr="alt:t273" loading="lazy" src="assets/red_grid.jpg" style="object-position:center top"/><figcaption data-i18n="t274"><b>Mascot-led feed</b>Illustrated graphics in one palette.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t275">Brand photo</span></div>
+<figure><img alt="Woman reading a booklet next to two red robots at a white table" data-i18n-attr="alt:t276" loading="lazy" src="assets/red_post.jpg" style="object-position:center"/><figcaption data-i18n="t277"><b>People-first photography</b>Product and person shown together.</figcaption></figure></div>
+</div>
+</div>
+</section>
+<!-- 5 STANDART -->
+<section class="band-sky" id="standart">
+<div class="wrap">
+<div class="sec-head"><span class="no">5</span><h2 data-i18n="t278">Case: <em>Standart</em></h2></div>
+<div class="meta"><span class="pill y" data-i18n="t279">Standart · bonded warehouse</span><span class="pill" data-i18n="t280">Freelance</span><span class="pill" data-i18n="t048">Figma</span><span class="pill" data-i18n="t281">Tilda</span><span class="pill" data-i18n="t044">Canva</span></div>
+<div class="grid g3 facts">
+<div class="card"><h3 data-i18n="t138">My <em>role</em></h3><p data-i18n="t282">Freelance designer for a logistics and bonded-warehouse company. I created the logo, website, company presentation, brochure and banner.</p></div>
+<div class="card"><h3 data-i18n="t140">What I <em>did</em></h3><p data-i18n="t283">Built a Figma prototype, then the live site on Tilda. Designed a tri-fold brochure and a banner in the same navy and gold system. The brochure turns a dense logistics offer into numbered steps and large-number callouts. All text is in Russian.</p></div>
+<div class="card"><h3 data-i18n="t142">Why it <em>fits Akradex</em></h3><p data-i18n="t284">One colour system from web to print, and a complex service explained in simple steps. A medical brand’s materials require the same discipline.</p></div>
+</div>
+<div class="grid g2 stdpair" style="margin-top:6px">
+<div class="win stdsite"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t285">Standart · Figma prototype</span></div>
+<figure><video aria-label="Screen recording of the Standart website prototype in Figma on a laptop" autoplay="" data-i18n-attr="aria-label:t286" loop="" muted="" playsinline="" poster="assets/standart_figma_poster.jpg" preload="metadata" src="assets/clip_standart_figma.mp4"></video>
+<figcaption data-i18n="t287"><b>The prototype</b>Designed in Figma first, with a Russian and English switch.</figcaption></figure></div>
+<div class="win stdsite"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t288">Standart · live site on Tilda</span></div>
+<figure><video aria-label="Screen recording of the live Standart website, scrolling through the page" autoplay="" data-i18n-attr="aria-label:t289" loop="" muted="" playsinline="" poster="assets/standart_site_poster.jpg" preload="metadata" src="assets/clip_standart_site.mp4"></video>
+<figcaption data-i18n="t290"><b>The live site</b>Then built on Tilda: <a href="https://llcstandart.ru/">llcstandart.ru</a></figcaption></figure></div>
+</div>
+<div class="grid g3 stdprint" style="margin-top:32px">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t291">Brochure · outside</span></div>
+<figure><img alt="Outer side of the Standart tri-fold brochure in navy and gold with the tagline and key figures" data-i18n-attr="alt:t292" loading="lazy" src="assets/standart_brochure_out.jpg"/><figcaption data-i18n="t293"><b>Brochure, outside</b>Tagline, key figures and a contact panel.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t294">Brochure · inside</span></div>
+<figure><img alt="Inside of the Standart brochure with a four-step process and company information" data-i18n-attr="alt:t295" loading="lazy" src="assets/standart_brochure_in.jpg"/><figcaption data-i18n="t296"><b>Brochure, inside</b>A four-step process, company facts and a container illustration.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t297">Banner</span></div>
+<figure><img alt="Navy banner with the Standart logo and the slogan: Store. Mark. Deliver. Grow faster." data-i18n-attr="alt:t298" loading="lazy" src="assets/standart_banner.jpg" style="object-position:left center"/><figcaption data-i18n="t299"><b>Banner</b>One slogan and one highlight colour.</figcaption></figure></div>
+</div>
+</div>
+</section>
+<!-- 6 MORE WORK BY TOPIC -->
+<section id="more">
+<div class="wrap">
+<div class="sec-head"><span class="no">6</span><h2 data-i18n="t300">Other <em>projects</em></h2></div>
+<p class="intro wide" data-i18n="t301">Smaller-scale projects, grouped by topic rather than by client.</p>
+<h3 class="topic" data-i18n="t302">Product design <em>&amp; prototyping</em></h3>
+<p class="intro" data-i18n="t303">Flows, components and shared styles in Figma. The same approach to consistency applies to a social feed and to a brand.</p>
+<div class="grid g3 samaetrio">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t304">Samae · flows</span></div>
+<figure><img alt="Slide showing five phone screens of the Samae app: sign-up, account creation, login, phone verification and country selection" data-i18n-attr="alt:t305" loading="lazy" src="assets/samae_deck6-06.jpg"/><figcaption data-i18n="t306"><b>Sign-up to verification</b>Five screens, one flow.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t307">Samae · app prototype</span></div>
+<figure><div style="background:#0b2a1e;display:flex;justify-content:center;padding:14px"><video aria-label="Screen recording of the Samae app prototype" autoplay="" data-i18n-attr="aria-label:t308" loop="" muted="" playsinline="" preload="metadata" src="assets/clip_samae.mp4" style="max-width:220px"></video></div>
+<figcaption data-i18n="t309"><b>Samae, a student course and GPA app</b>Final project at Yonsei, in a team of two. I built the Figma prototype: sign-up, phone verification, schedule, chat, course list and GPA calculator. About 30 students tested it.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t310">Samae · business model</span></div>
+<figure><img alt="Business model canvas for the Samae app on a black slide" data-i18n-attr="alt:t311" loading="lazy" src="assets/samae_deck-13.jpg"/><figcaption data-i18n="t312"><b>Business model canvas</b>The deck also covers testing, feedback and scaling up.</figcaption></figure></div>
+</div>
+<div class="grid g2 sitepair" style="margin-top:32px;align-items:stretch">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t313">Area · example of site flow</span></div>
+<figure><video aria-label="Screen recording of a responsive website built in Figma Sites" autoplay="" class="sitevid" data-i18n-attr="aria-label:t314" loop="" muted="" playsinline="" preload="metadata" src="assets/clip_area.mp4"></video>
+<figcaption data-i18n="t315"><b>Site flow build in Figma</b>Components, text and colour styles, and three layouts: desktop, tablet, mobile.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t316">Dessein · event agency site</span></div>
+<figure><video aria-label="Screen recording scrolling through the Dessein event agency website" autoplay="" class="sitevid" data-i18n-attr="aria-label:t317" loop="" muted="" playsinline="" poster="assets/dessein_poster.jpg" preload="metadata" src="assets/clip_dessein.mp4"></video>
+<figcaption data-i18n="t318"><b>Event agency website</b>A site for a wedding and event agency, built on Vigbo as a freelance project, in Russian: three service cards, an inquiry form and social links. I can explain the structure and the content decisions. <a href="https://dessein-events.ru/">dessein-events.ru</a></figcaption></figure></div>
+</div>
+<h3 class="topic" data-i18n="t319" style="margin-top:64px">Presentations <em>&amp; reports</em></h3>
+<p class="intro wide" data-i18n="t320">Presentations and reports, mostly built in Canva: a company annual report, a client company deck and two university business projects.</p>
+<div class="card" style="margin-bottom:30px"><h3 data-i18n="t321">Annual marketing report, <em>CompassNet</em></h3>
+<p data-i18n="t322">A 31-slide report for Paymentwall, Terminal3 and FasterPay, December 2024. It covers the 2024 strategy for each brand, channels, events, lead generation and budget, social media analysis, the 2025 strategy and event calendars. I worked on the report and designed it in Canva.</p>
+<p class="small muted" data-i18n="t323">Headline results from the report are summarised in section 3. The budget and detailed account figures stay private; I can walk through the report in an interview.</p></div>
+<div class="grid g4" style="align-items:start">
+<div class="win"><figure><img alt="Cover slide of the annual marketing report in black and yellow" data-i18n-attr="alt:t324" loading="lazy" src="assets/report_p1.jpg"/><figcaption data-i18n="t325"><b>Cover</b>One bold palette across three brands.</figcaption></figure></div>
+<div class="win"><figure><img alt="Agenda slide of the annual marketing report with ten numbered sections" data-i18n-attr="alt:t326" loading="lazy" src="assets/report_p2.jpg"/><figcaption data-i18n="t327"><b>Agenda</b>Ten sections on one page.</figcaption></figure></div>
+<div class="win"><figure><img alt="Slide listing marketing channels for each of the three brands with ticks and crosses" data-i18n-attr="alt:t328" loading="lazy" src="assets/report_p6.jpg"/><figcaption data-i18n="t329"><b>Channels</b>The three brands compared on one grid.</figcaption></figure></div>
+<div class="win"><figure><img alt="Social media strategy slide for 2025 with content examples and hashtags" data-i18n-attr="alt:t330" loading="lazy" src="assets/report_p19.jpg"/><figcaption data-i18n="t331"><b>2025 social plan</b>Content examples and hashtags per channel.</figcaption></figure></div>
+</div>
+<div class="card" style="margin:48px 0 30px"><h3 data-i18n="t332">Company deck, <em>Standart</em></h3>
+<p data-i18n="t333">A six-slide company presentation for the logistics client, in Russian and in the same navy and gold system as the website and print.</p>
+<p><a data-i18n="t334" href="assets/standart_deck.pdf">Open the full deck (PDF, 6 slides)</a></p></div>
+<div class="grid g3" style="align-items:start">
+<div class="win"><figure><img alt="Cover slide of the Standart deck with a delivery truck and the slogan: Store. Mark. Deliver. Grow faster." data-i18n-attr="alt:t335" loading="lazy" src="assets/standart_deck_p1.jpg"/><figcaption data-i18n="t336"><b>Cover</b>One slogan and one highlight colour.</figcaption></figure></div>
+<div class="win"><figure><img alt="Slide with six key figures on customs storage, marking and duty" data-i18n-attr="alt:t337" loading="lazy" src="assets/standart_deck_p3.jpg"/><figcaption data-i18n="t338"><b>Key numbers</b>Six facts, one callout style.</figcaption></figure></div>
+<div class="win"><figure><img alt="Slide explaining how a customs warehouse works in four steps" data-i18n-attr="alt:t339" loading="lazy" src="assets/standart_deck_p5.jpg"/><figcaption data-i18n="t340"><b>Process</b>A dense procedure turned into four steps.</figcaption></figure></div>
+</div>
+<div class="grid g2" style="margin:48px 0 30px;align-items:stretch">
+<div class="card"><h3 data-i18n="t341">Business project deck, <em>Samae</em></h3>
+<p data-i18n="t342">The final project deck for the Samae student app at Yonsei: business model canvas, user flows, testing with about 30 students, feedback and plans to scale. Two slides are shown in the product design block above.</p>
+<p><a data-i18n="t343" href="assets/samae_deck.pdf">Open the full deck (PDF, 18 slides)</a></p></div>
+<div class="card"><h3 data-i18n="t344">Startup project, <em>Ansi</em></h3>
+<p data-i18n="t345">Ansi is a K-pop fandom app where playing games turns into donations to charity, with AR photocards and customisable idol characters. We built it as a final university project. My part was the business side of the startup: analytics, sales, planning and the other steps of turning an app idea into a business.</p>
+<p><a data-i18n="t346" href="assets/ansi_deck.pdf">Open the full deck (PDF, 15 slides)</a></p></div>
+</div>
+<div class="grid g3" style="margin:0 0 30px;align-items:start">
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t347">Ansi · idea</span></div>
+<figure><img alt="Ansi solution slide: play games equals donation, corporate sponsorship, play with the artist's custom character and connect with fandom friends" data-i18n-attr="alt:t348" loading="lazy" src="assets/ansi_p5.jpg"/><figcaption data-i18n="t349"><b>The idea</b>Play games, donate to a good cause, and connect with the fandom.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t350">Ansi · business model</span></div>
+<figure><img alt="Ansi business model canvas with partners, activities, resources, value propositions, revenue streams and customer segments" data-i18n-attr="alt:t351" loading="lazy" src="assets/ansi_p7.jpg"/><figcaption data-i18n="t352"><b>Business model canvas</b>Partners, revenue streams and costs for the startup.</figcaption></figure></div>
+<div class="win"><div class="win-bar"><i></i><i></i><i></i><span data-i18n="t353">Ansi · strategy</span></div>
+<figure><img alt="Ansi marketing strategies slide and break-even point of about 245 monthly users" data-i18n-attr="alt:t354" loading="lazy" src="assets/ansi_p8.jpg"/><figcaption data-i18n="t355"><b>Marketing and break-even</b>Channels and the number of monthly users needed to break even: about 245.</figcaption></figure></div>
+</div>
+</div>
+</section>
+<!-- 7 INFLUENCERS -->
+<section class="band-sage" id="influence">
+<div class="wrap">
+<div class="sec-head"><span class="no">7</span><h2 data-i18n="t356">Influencers <em>&amp; PR</em></h2></div>
+<p class="intro wide" data-i18n="t357">I have not yet run a paid influencer campaign from brief to report. Below is the experience I do have, and how I would run one for Akradex.</p>
+<div class="grid g2" style="align-items:start">
+<div class="card" style="color:var(--ink)">
+<h3 data-i18n="t358">What I’ve <em>done</em></h3>
+<ul>
+<li data-i18n="t359"><b>StoryTaco:</b> analysed foreign markets, searched for influencers suited to collaboration and contacted them. My work covered search and outreach.</li>
+<li data-i18n="t360"><b>R:ED:</b> two years as the public face of a brand, inviting schools and brands to collaborate.</li>
+<li data-i18n="t361"><b>CompassNet:</b> all marketing in Korea for three fintech brands, including localised PR: I wrote the news articles, sent them to newspapers and supported offline events.</li>
+</ul>
+</div>
+<div class="card" style="color:var(--ink)">
+<h3 data-i18n="t362">How I’d run it <em>for Akradex</em></h3>
+<ol class="steps" style="margin-top:0">
+<li data-i18n="t363"><b>Find:</b> clinicians, skin-science educators and clinic owners with credible audiences, in Korea and in Akradex’s target markets.</li>
+<li data-i18n="t364"><b>Vet:</b> review past brand partnerships and claims, and follow each market’s rules for medical products.</li>
+<li data-i18n="t365"><b>Brief:</b> education first. Scripts approved by the company, no promises of results and no before-and-after images.</li>
+<li data-i18n="t366"><b>Measure:</b> saves, shares and qualified enquiries from clinics and distributors, in addition to views.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section class="band-sky" id="why">
+<div class="wrap">
+<div class="sec-head"><span class="no">8</span><h2 data-i18n="t367">Why <em>Akradex</em></h2></div>
+<p class="intro" data-i18n="t368">Three points from my record that match what the role requires.</p>
+<div class="grid g3">
+<div class="card">
+<h3 data-i18n="t369">Technical, <em>made clear</em></h3>
+<p data-i18n="t370">At R:ED I explained robotics to schools and institutes. At CompassNet I worked on B2B marketing and payment products for companies in several industries. I would love for beauty science and cosmetics to be the next technical subject I make easy to follow.</p>
+</div>
+<div class="card">
+<h3 data-i18n="t371">Events, <em>in many languages</em></h3>
+<p data-i18n="t372">Terminal3’s feed was built around trade shows: G-Star in Busan with English and Korean captions, GamesBeat in San Francisco and Games Gathering in Kyiv. Akradex exhibits at Cosmoprof and Vietbeauty, and I am familiar with the cycle: announce, attend, recap.</p>
+</div>
+<div class="card">
+<h3 data-i18n="t373">Real interest <em>in the science</em></h3>
+<p data-i18n="t374">My Yonsei project “K-Culture and the World” analysed how the Korean beauty industry changed over the years. I use skincare daily and read about how formulations are developed in my own time.</p>
+</div>
+</div>
+<div class="grid g2" style="margin-top:28px;align-items:start">
+<div class="card">
+<h3 data-i18n="t375">A non-linear path, <em>used as an advantage</em></h3>
+<p data-i18n="t376">I have changed industries before and learned each product well enough to explain it to its customers. Aesthetic medicine would be the next one. I would bring the same method: understand the product with the experts, write clearly, keep the brand consistent, and check every claim before it is published.</p>
+</div>
+<div class="card">
+<h3 data-i18n="t377">People first, <em>in every message</em></h3>
+<p data-i18n="t378">Aesthetic medicine is personal. People decide with a mix of hope, trust and sometimes doubt, and good communication respects all three. I enjoy understanding that human side of marketing, and I like working with people, from colleagues and clinicians to customers. Clear, kind and honest communication is what I would bring to Akradex.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 9 CONCEPTS -->
+<section id="concepts">
+<div class="wrap">
+<div class="sec-head"><span class="no">9</span><h2 data-i18n="t379">Ideas for <em>Akradex</em></h2></div>
+<p class="intro wide" data-i18n="t380">Five concepts I would propose in my first month. They are my own ideas, not Akradex content, and the layouts below are quick sketches. Industry coverage in 2026 points to growing interest in skin boosters and regenerative treatments, and to doctors fact-checking viral trends, which leaves room for a calm, expert-led feed.</p>
+<div class="cgrid">
+<div>
+<div class="slide sl-a"><span class="tag" data-i18n="t381">Concept A · Carousel</span><h4 data-i18n="t382">Peptide or collagen? <em>Two different jobs.</em></h4><p data-i18n="t383">Slide 1 of 5</p></div>
+<p class="spec" data-i18n="t384">Peptides vs collagen, in plain words</p>
+<ol class="steps"><li data-i18n="t385">Hook question</li><li data-i18n="t386">What collagen is</li><li data-i18n="t387">What peptides are</li><li data-i18n="t388">Where each appears in the clinic (company-approved)</li><li data-i18n="t389">“Ask your clinician” and a link</li></ol>
+<p class="small muted" data-i18n="t390">Canva or Figma, 1080 × 1350. All facts supplied and checked by Akradex’s medical team.</p>
+</div>
+<div>
+<div class="slide sl-b"><span class="tag" data-i18n="t391">Concept B · Series</span><h4 data-i18n="t392">Myth <em>or</em> fact?</h4><p data-i18n="t393">“Layering 5 to 7 products every night hydrates more.”</p></div>
+<p class="spec" data-i18n="t394">A viral claim, answered by a doctor</p>
+<ol class="steps"><li data-i18n="t395">The claim, in quotes</li><li data-i18n="t396">Clinician’s answer on camera or in a quote card</li><li data-i18n="t397">One takeaway line</li></ol>
+<p class="small muted" data-i18n="t398">One claim per post in a repeated layout, 1080 × 1350. Answers come only from a clinician.</p>
+</div>
+<div>
+<div class="slide sl-c"><span class="tag" data-i18n="t399">Concept C · Reel or carousel</span><h4 data-i18n="t400">From lab <em>to clinic</em></h4><p data-i18n="t401">How a product is made and checked.</p></div>
+<p class="spec" data-i18n="t402">Behind the scenes</p>
+<ol class="steps"><li data-i18n="t403">Lab</li><li data-i18n="t404">Quality checks</li><li data-i18n="t405">Packing</li><li data-i18n="t406">Arrival at the clinic</li></ol>
+<p class="small muted" data-i18n="t407">Uses footage and facts approved by the company. It reflects my interest in how formulations are made.</p>
+</div>
+</div>
+<div class="grid g2" style="margin-top:44px;align-items:start">
+<div class="card">
+<h3 data-i18n="t408">Concept D · <em>Booth in 15 seconds</em></h3>
+<p data-i18n="t409">A vertical recap Reel for Cosmoprof, Vietbeauty and other shows, based on my Terminal3 event work.</p>
+<ol class="steps"><li data-i18n="t410">Booth wide shot, 3 s</li><li data-i18n="t411">Product close-up, 3 s</li><li data-i18n="t412">Doctor demo, 3 s</li><li data-i18n="t413">Meeting or handshake, 3 s</li><li data-i18n="t414">End card: “See you at the next show”, 3 s</li></ol>
+<p class="small muted" data-i18n="t415">1080 × 1920, captions in English and the local language, with music cleared for use.</p>
+</div>
+<div class="card">
+<h3 data-i18n="t416">Concept E · <em>Ask the expert</em></h3>
+<p data-i18n="t417">A 30-second Reel: one question from followers, one clinician answering to camera.</p>
+<ol class="steps"><li data-i18n="t418">Question on screen, 3 s</li><li data-i18n="t419">Clinician’s answer, about 20 s</li><li data-i18n="t420">Captions in two languages</li><li data-i18n="t421">End card with the product line</li></ol>
+<p class="small muted" data-i18n="t422">The same format repeats weekly, so it can be filmed in batches.</p>
+</div>
+</div>
+<p class="note" data-i18n="t423" style="margin-top:32px">Advertising rules for medical products differ by market. Every post above would need sign-off from Akradex’s medical and regulatory team before publishing.</p>
+</div>
+</section>
+<!-- CONTACT -->
+<section class="band-sage contact" id="contact">
+<div class="wrap contact-grid">
+<div class="contact-text">
+<p class="eyebrow" data-i18n="t011">Contact</p>
+<p class="big" data-i18n="t424">Let’s create <em>amazing things</em> together.</p>
+<p data-i18n="t425" style="margin:20px 0 14px;font-size:19px">Email: <span id="mailtxt" style="user-select:all">sofiiagorpenko@gmail.com</span></p>
+<button aria-live="polite" class="link" data-i18n="t426" id="copymail" style="background:none;color:inherit;cursor:pointer" type="button">Copy my email</button>
+<a class="link" data-i18n="t427" href="mailto:sofiiagorpenko@gmail.com" rel="noopener" target="_blank">Write to me</a>
+<a class="link" data-i18n="t133" href="https://www.linkedin.com/in/sofiia-gorpenko-493792222" rel="noopener" target="_blank">LinkedIn</a>
+</div>
+<div class="cardscene">
+<div class="tilt" id="tilt">
+<div aria-label="Business card. Press to flip it over" aria-pressed="false" class="flip" data-i18n-attr="aria-label:t428" id="flipcard" role="button" tabindex="0">
+<div class="face front" id="cardfront">
+<div class="cf-text">
+<span class="cf-kicker" data-i18n="t015">Digital marketing specialist</span>
+<b class="cf-name" data-i18n="t429">Sofiia<br/>Gorpenko</b>
+<span class="cf-sub" data-i18n="t017">Seoul, South Korea</span>
+<span class="cf-lang" data-i18n="t018">Russian · English · Korean</span>
+</div>
+<div class="cf-photo"><img alt="" height="1300" loading="lazy" src="assets/portrait.png" width="1000"/></div>
+<span aria-hidden="true" class="cf-flip" data-i18n="t430">Flip ↻</span>
+</div>
+<div class="face back" id="cardback" inert="">
+<div class="cb-text">
+<span class="cb-title" data-i18n="t431">Say <em>hello</em></span>
+<span class="cb-line"><b data-i18n="t432">Email</b><a data-i18n="t433" href="mailto:sofiiagorpenko@gmail.com" rel="noopener" target="_blank">sofiiagorpenko@gmail.com</a></span>
+<span class="cb-line"><b data-i18n="t133">LinkedIn</b><a data-i18n="t434" href="https://www.linkedin.com/in/sofiia-gorpenko-493792222" rel="noopener" target="_blank">sofiia-gorpenko</a></span>
+<span class="cb-line" data-i18n="t435"><b>Based in</b>Seoul, South Korea</span>
+</div>
+<div class="cb-qr"><svg aria-label="QR code that opens Sofiia Gorpenko’s LinkedIn profile" data-i18n-attr="aria-label:tQ" role="img" shape-rendering="crispEdges" viewBox="0 0 33 33"><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM14 0h1v1h-1zM15 0h1v1h-1zM17 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM29 0h1v1h-1zM30 0h1v1h-1zM31 0h1v1h-1zM32 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM10 1h1v1h-1zM13 1h1v1h-1zM14 1h1v1h-1zM15 1h1v1h-1zM16 1h1v1h-1zM20 1h1v1h-1zM22 1h1v1h-1zM24 1h1v1h-1zM26 1h1v1h-1zM32 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM15 2h1v1h-1zM19 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM22 2h1v1h-1zM23 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM32 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM8 3h1v1h-1zM9 3h1v1h-1zM10 3h1v1h-1zM12 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM17 3h1v1h-1zM18 3h1v1h-1zM19 3h1v1h-1zM22 3h1v1h-1zM23 3h1v1h-1zM24 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM29 3h1v1h-1zM30 3h1v1h-1zM32 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM9 4h1v1h-1zM15 4h1v1h-1zM16 4h1v1h-1zM19 4h1v1h-1zM20 4h1v1h-1zM21 4h1v1h-1zM22 4h1v1h-1zM23 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM29 4h1v1h-1zM30 4h1v1h-1zM32 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM9 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM20 5h1v1h-1zM26 5h1v1h-1zM32 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM29 6h1v1h-1zM30 6h1v1h-1zM31 6h1v1h-1zM32 6h1v1h-1zM9 7h1v1h-1zM10 7h1v1h-1zM11 7h1v1h-1zM14 7h1v1h-1zM16 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM21 7h1v1h-1zM22 7h1v1h-1zM24 7h1v1h-1zM0 8h1v1h-1zM1 8h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM9 8h1v1h-1zM11 8h1v1h-1zM16 8h1v1h-1zM17 8h1v1h-1zM18 8h1v1h-1zM19 8h1v1h-1zM22 8h1v1h-1zM23 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM27 8h1v1h-1zM29 8h1v1h-1zM31 8h1v1h-1zM0 9h1v1h-1zM2 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM17 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM23 9h1v1h-1zM26 9h1v1h-1zM30 9h1v1h-1zM31 9h1v1h-1zM32 9h1v1h-1zM0 10h1v1h-1zM3 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM10 10h1v1h-1zM13 10h1v1h-1zM14 10h1v1h-1zM15 10h1v1h-1zM16 10h1v1h-1zM18 10h1v1h-1zM22 10h1v1h-1zM26 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM31 10h1v1h-1zM0 11h1v1h-1zM2 11h1v1h-1zM3 11h1v1h-1zM5 11h1v1h-1zM8 11h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM15 11h1v1h-1zM19 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM22 11h1v1h-1zM23 11h1v1h-1zM25 11h1v1h-1zM26 11h1v1h-1zM28 11h1v1h-1zM30 11h1v1h-1zM0 12h1v1h-1zM1 12h1v1h-1zM4 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM14 12h1v1h-1zM15 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM22 12h1v1h-1zM23 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM0 13h1v1h-1zM1 13h1v1h-1zM3 13h1v1h-1zM4 13h1v1h-1zM7 13h1v1h-1zM8 13h1v1h-1zM9 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM19 13h1v1h-1zM20 13h1v1h-1zM21 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM26 13h1v1h-1zM31 13h1v1h-1zM32 13h1v1h-1zM0 14h1v1h-1zM3 14h1v1h-1zM5 14h1v1h-1zM6 14h1v1h-1zM10 14h1v1h-1zM11 14h1v1h-1zM12 14h1v1h-1zM17 14h1v1h-1zM18 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM25 14h1v1h-1zM31 14h1v1h-1zM0 15h1v1h-1zM2 15h1v1h-1zM3 15h1v1h-1zM4 15h1v1h-1zM10 15h1v1h-1zM11 15h1v1h-1zM14 15h1v1h-1zM16 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM28 15h1v1h-1zM30 15h1v1h-1zM0 16h1v1h-1zM1 16h1v1h-1zM2 16h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM9 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM18 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM31 16h1v1h-1zM0 17h1v1h-1zM2 17h1v1h-1zM4 17h1v1h-1zM5 17h1v1h-1zM8 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM12 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM19 17h1v1h-1zM20 17h1v1h-1zM23 17h1v1h-1zM26 17h1v1h-1zM29 17h1v1h-1zM31 17h1v1h-1zM32 17h1v1h-1zM1 18h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM7 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM13 18h1v1h-1zM14 18h1v1h-1zM15 18h1v1h-1zM16 18h1v1h-1zM17 18h1v1h-1zM21 18h1v1h-1zM25 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM31 18h1v1h-1zM0 19h1v1h-1zM1 19h1v1h-1zM2 19h1v1h-1zM7 19h1v1h-1zM9 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM15 19h1v1h-1zM21 19h1v1h-1zM22 19h1v1h-1zM23 19h1v1h-1zM28 19h1v1h-1zM30 19h1v1h-1zM2 20h1v1h-1zM4 20h1v1h-1zM5 20h1v1h-1zM6 20h1v1h-1zM10 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM17 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM25 20h1v1h-1zM27 20h1v1h-1zM28 20h1v1h-1zM31 20h1v1h-1zM0 21h1v1h-1zM1 21h1v1h-1zM2 21h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM15 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM23 21h1v1h-1zM26 21h1v1h-1zM29 21h1v1h-1zM31 21h1v1h-1zM32 21h1v1h-1zM0 22h1v1h-1zM3 22h1v1h-1zM6 22h1v1h-1zM8 22h1v1h-1zM9 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM18 22h1v1h-1zM21 22h1v1h-1zM26 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM31 22h1v1h-1zM0 23h1v1h-1zM5 23h1v1h-1zM8 23h1v1h-1zM11 23h1v1h-1zM14 23h1v1h-1zM16 23h1v1h-1zM19 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM23 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM28 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM0 24h1v1h-1zM6 24h1v1h-1zM7 24h1v1h-1zM8 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM17 24h1v1h-1zM18 24h1v1h-1zM20 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM25 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM29 24h1v1h-1zM32 24h1v1h-1zM8 25h1v1h-1zM9 25h1v1h-1zM12 25h1v1h-1zM13 25h1v1h-1zM14 25h1v1h-1zM15 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM21 25h1v1h-1zM24 25h1v1h-1zM28 25h1v1h-1zM29 25h1v1h-1zM30 25h1v1h-1zM32 25h1v1h-1zM0 26h1v1h-1zM1 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM13 26h1v1h-1zM14 26h1v1h-1zM15 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h1v1h-1zM29 26h1v1h-1zM31 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM10 27h1v1h-1zM12 27h1v1h-1zM13 27h1v1h-1zM18 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM31 27h1v1h-1zM0 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM9 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM18 28h1v1h-1zM19 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM31 28h1v1h-1zM0 29h1v1h-1zM2 29h1v1h-1zM3 29h1v1h-1zM4 29h1v1h-1zM6 29h1v1h-1zM8 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM25 29h1v1h-1zM27 29h1v1h-1zM28 29h1v1h-1zM29 29h1v1h-1zM30 29h1v1h-1zM31 29h1v1h-1zM32 29h1v1h-1zM0 30h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM6 30h1v1h-1zM8 30h1v1h-1zM9 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM15 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM20 30h1v1h-1zM21 30h1v1h-1zM22 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM29 30h1v1h-1zM0 31h1v1h-1zM6 31h1v1h-1zM8 31h1v1h-1zM9 31h1v1h-1zM10 31h1v1h-1zM11 31h1v1h-1zM14 31h1v1h-1zM18 31h1v1h-1zM19 31h1v1h-1zM20 31h1v1h-1zM21 31h1v1h-1zM22 31h1v1h-1zM25 31h1v1h-1zM26 31h1v1h-1zM28 31h1v1h-1zM29 31h1v1h-1zM30 31h1v1h-1zM0 32h1v1h-1zM1 32h1v1h-1zM2 32h1v1h-1zM3 32h1v1h-1zM4 32h1v1h-1zM5 32h1v1h-1zM6 32h1v1h-1zM8 32h1v1h-1zM9 32h1v1h-1zM10 32h1v1h-1zM11 32h1v1h-1zM15 32h1v1h-1zM16 32h1v1h-1zM17 32h1v1h-1zM18 32h1v1h-1zM22 32h1v1h-1zM24 32h1v1h-1zM26 32h1v1h-1zM29 32h1v1h-1zM31 32h1v1h-1z" fill="#232A26"></path></svg><span data-i18n="t436">Scan for LinkedIn</span></div>
+</div>
+</div>
+</div>
+<p class="cardhint" data-i18n="t437">Tap or click the card to flip it.</p>
+</div>
+</div>
+</section>
+<footer><div class="wrap" data-i18n="t438">Concept pieces are my own ideas, not company content.</div></footer>
+<script type="application/json" id="i18n-ko">{"t001":"섹션","t002":"SG.","t003":"역량","t004":"커리어","t005":"CompassNet","t006":"R:ED","t007":"Standart","t008":"기타 프로젝트","t009":"왜 Akradex인가","t010":"아이디어","t011":"연락처","t012":"안녕하세요, 저는","t013":"Sofiia","t014":"Gorpenko","t015":"디지털 마케팅 전문가","t016":"저는 복잡한 제품을 쉽게 이해시키는 일을 하고, 사람들이 무엇에 눈길을 주고, 신뢰하고, 기억하는지 배우는 것을 좋아합니다. 제 커리어는 직선이 아닙니다. 모바일 로보틱스 세계 챔피언 타이틀에서 시작해 핀테크, 게임, 물류, 이벤트 기획 산업을 거쳐 왔고, 그 과정에서 영어, 러시아어, 한국어로 일했습니다. 이 폭넓은 경험이 저의 가장 큰 강점입니다. 새로운 산업을 만날 때마다 빠르게 배우고 새로운 고객층을 이해하는 법을 익혔기 때문입니다.","t017":"대한민국 서울","t018":"러시아어 · 영어 · 한국어","t019":"연세대학교","t020":"Sofiia Gorpenko의 인물 사진","t021":"팔짱을 끼고 옆을 바라보는 Sofiia Gorpenko","t022":"디지털 마케팅, 이벤트 마케팅, 브랜딩, 분석, UX/UI 디자인, 카피라이팅","t023":"디지털 마케팅 <i>·<\/i> 이벤트 마케팅 <i>·<\/i> 브랜딩 <i>·<\/i> 분석 <i>·<\/i> UX/UI 디자인 <i>·<\/i> 카피라이팅 <i>·<\/i>","t024":"<em>목차<\/em>","t025":"역량 & 도구","t026":"솔직한 숙련도와 함께 정리한 도구와 역량, 그리고 각각이 소개된 위치.","t027":"커리어","t028":"직선이 아닌 커리어, 그리고 그것이 강점인 이유.","t029":"케이스: CompassNet","t030":"세 브랜드를 위한 게시물, 카피라이팅, 보도 기사, 영상, 분석.","t031":"케이스: R:ED","t032":"브랜드의 얼굴, 인스타그램, 파트너십 (2020~2023).","t033":"케이스: Standart","t034":"로고, 웹사이트, 인쇄물, 회사 소개 자료.","t035":"제품 디자인, 웹사이트, 프레젠테이션, 보고서.","t036":"인플루언서 & PR","t037":"지금까지의 경험과 Akradex를 위한 계획.","t038":"제 경험이 이 직무와 맞닿는 부분.","t039":"Akradex를 위한 아이디어","t040":"제가 제안하는 다섯 가지 콘텐츠 콘셉트.","t041":"역량 <em>&amp; 도구<\/em>","t042":"제가 사용하는 도구, 그 뒤에 있는 역량, 그리고 이 포트폴리오에서 각각이 소개된 위치입니다. 도구별 숙련도는 있는 그대로 표기했고, 아직 해보지 않은 것은 따로 표시했습니다.","t043":"Ca","t044":"Canva","t045":"능숙","t046":"주력 디자인 도구: SNS 게시물, 프레젠테이션, 보고서, 인쇄물, 영상.","t047":"Fi","t048":"Figma","t049":"컴포넌트와 공용 스타일을 활용한 앱·웹사이트 프로토타입.","t050":"Cu","t051":"CapCut","t052":"양호","t053":"SNS 숏폼 영상 편집.","t054":"AI","t055":"ChatGPT & Claude","t056":"매일 사용","t057":"콘텐츠 캘린더, 일정 관리, 초안 작성에 활용하며, 결과물은 항상 직접 다시 쓰고 사실 확인을 합니다.","t058":"Pr","t059":"Premiere Pro","t060":"아직 없음","t061":"아직 사용해 본 적 없습니다. 지금은 CapCut으로 편집 업무를 충분히 해결하고 있습니다.","t062":"Il","t063":"Illustrator","t064":"아직 사용해 본 적 없습니다. 지금까지 인쇄물 레이아웃은 Canva로 만들었습니다.","t065":"마케팅 & <em>분석 역량<\/em>","t066":"데이터 & 분석","t067":"세 브랜드 계정의 성과를 추적하고, 참여를 이끄는 요인을 읽어내며, 연간 마케팅 보고서 작업에 참여했습니다. <a href=\"#social\">섹션 3<\/a> · <a href=\"#more\">섹션 6<\/a>","t068":"엑셀 & 스프레드시트","t069":"마케팅 계정의 추적, 리포팅, 데이터 분석.","t070":"SEO & 유료 광고","t071":"SEO에 대한 실무 지식이 있습니다. 유료 검색·유료 소셜 캠페인을 직접 운영해 본 적은 아직 없으며, Akradex의 채널에서 그 경험을 쌓고 싶습니다.","t072":"마케팅 자동화 & CRM","t073":"이메일 마케팅과 CRM 기반 고객 관리: 리드를 육성하고 여러 채널에 걸친 고객 여정을 따라갑니다.","t074":"웹 & 기술 이해","t075":"Tilda와 Vigbo로 웹사이트를 제작·런칭했고 Figma로 사이트 프로토타입을 만들어, 랜딩 페이지를 빠르게 구성하고 테스트할 수 있습니다. 기초적인 Python과 JavaScript도 다룹니다. <a href=\"#standart\">섹션 5<\/a>","t076":"인플루언서 발굴 & 아웃리치","t077":"StoryTaco에서 시장 분석, 인플루언서 탐색, 섭외를 담당했고, Akradex에서 인플루언서 활동을 어떻게 운영할지 4단계 계획을 세웠습니다. <a href=\"#influence\">섹션 7<\/a>","t078":"크리에이티브 & <em>전략 역량<\/em>","t079":"카피라이팅 & 스토리텔링","t080":"명확한 구조를 갖춘 캡션, 공지, 스크립트를 Terminal3와 Paymentwall을 위해 작성하고, 플랫폼과 독자에 맞게 조정했습니다. 브랜드의 행사와 소식을 다룬 보도 기사를 직접 써서 신문사에 보내기도 했습니다. R:ED에서는 세계 챔피언이라는 저의 배경으로 브랜드 스토리를 전했습니다. <a href=\"#social\">섹션 3<\/a>","t081":"SNS & 영상 콘텐츠","t082":"Instagram과 LinkedIn에 맞춘 게시물, 행사 사진 촬영, 숏폼 영상까지, 콘텐츠 캘린더부터 행사 후기 콘텐츠까지 담당했습니다. Terminal3 팀과 함께 설명 영상과 루프 영상을 만들었고, CapCut으로 빠른 편집도 했습니다. <a href=\"#social\">섹션 3<\/a>","t083":"AI & 업무 방식 적응력","t084":"리서치, 일정 관리, 초안 변형 작성에 ChatGPT와 Claude를 매일 활용합니다. 모든 결과물은 직접 다시 쓰고 사실 확인을 하며, 전략과 브랜드 보이스는 제가 맡습니다.","t085":"디자인 & UX 사고","t086":"깔끔한 레이아웃, 시각적 위계, 사용자 중심 사고를 게시물, 발표 자료, 인쇄물, 웹사이트에 적용하며, 브랜드마다 하나의 템플릿 체계를 씁니다. Samae 학생 앱은 약 30명의 사용자와 테스트했습니다. <a href=\"#more\">섹션 6<\/a> · <a href=\"#standart\">섹션 5<\/a>","t087":"전문성, <em>제가 가져오는 것<\/em>","t088":"기술적인 제품 설명하기","t089":"R:ED에서는 학교와 교육기관을 위한 로보틱스를, CompassNet에서는 여러 산업의 기업을 위한 B2B 마케팅과 결제 상품을 다뤘습니다. 다음 주제는 뷰티 사이언스와 화장품이 되어야 한다고 생각합니다.","t090":"이벤트","t091":"여러 언어로 진행하는 행사 중심 SNS 콘텐츠: 행사 전 공지, 현장 커버리지, 행사 후 리캡. <a href=\"#social\">섹션 3<\/a>","t092":"PR & 브랜딩","t093":"R:ED에서 2년간 브랜드의 얼굴로 활동하며 리브랜딩과, 팔로워 수보다 파트너와 신뢰를 겨냥한 PR에도 참여했습니다. CompassNet에서는 한국 내 모든 마케팅을 맡아 현지화 PR을 진행했고, 보도 기사를 직접 쓰고 신문사에 보냈으며 오프라인 행사도 함께했습니다. 또한 SNS 게시물부터 인쇄물까지 각 브랜드를 하나의 비주얼 체계로 유지했습니다. <a href=\"#red\">섹션 4<\/a> · <a href=\"#social\">섹션 3<\/a>","t094":"새로운 산업에 빠르게 적응하기","t095":"지금까지 네 개의 산업을 경험했고, 각각 고객에게 설명할 수 있을 만큼 충분히 익혔습니다. <a href=\"#path\">섹션 2<\/a>","t096":"사람 이해하기","t097":"연세대학교에서 소비자 행동과 브랜드 관리를, HarvardX에서 설득력 있는 글쓰기와 공개 연설을 배웠고, 2년 동안 실제 청중 앞에서 발표했습니다. 저는 사람들을 움직이는 동기를 배우는 일을 좋아하고, 이를 글쓰기, 디자인, 콘텐츠 기획에 활용합니다. <a href=\"#path\">섹션 2<\/a>","t098":"언어","t099":"러시아어 모국어, 영어 IELTS C1, 한국어 TOPIK 4급.","t100":"카메라 <em>앞에서<\/em>","t101":"카메라 앞에서도 편안합니다. 2년 동안 R:ED를 대표해 행사, 워크숍, 대회, 라이브 방송에서 발표했고, Terminal3의 행사 사진도 촬영했습니다. 핀테크 브랜드에서 TikTok이 흔한 채널이 아니어서 세로형 숏폼 영상은 많이 만들지 못했지만, 도입을 적극 제안한 적은 있습니다. 이 역량을 어울리는 브랜드와 함께 키워 가는 것이 제 가장 큰 목표입니다.","t102":"<em>커리어<\/em>","t103":"제 배경은 로보틱스, 게임 결제, 물류, 이벤트 에이전시에 걸쳐 있습니다. 직선이 아닌 경로이며, 저는 이것을 가장 큰 강점으로 생각합니다. 어떤 역할에서도 공통점은 같습니다. 제품을 빠르게 익히고, 명확하게 설명하고, 브랜드가 어디에 나타나든 일관성을 지키는 것입니다.","t104":"빠르게 <em>배웁니다<\/em>","t105":"네 개의 산업에서 처음부터 시작했고, 그때마다 결국 고객에게 제품을 설명하는 자리까지 올랐습니다. 뷰티 사이언스와 화장품 분야를 빠르게 익히는 일도 어떻게 접근해야 하는지 알고 있습니다.","t106":"무엇이 <em>이어지는지<\/em> 분석합니다","t107":"공지를 위한 명확한 구조, 하나의 비주얼 체계, 솔직한 설명은 로보틱스, 결제, 물류 어디에서나 통했습니다. 브랜드 커뮤니케이션에서 무엇이 변하지 않고 무엇이 독자에 따라 달라지는지 알고 있습니다.","t108":"<em>사람<\/em>이 먼저","t109":"마케팅은 사람들과 나누는 대화이기에, 저는 사람들이 어떻게 생각하고 느끼고 결정하는지 공부합니다. 신뢰를 쌓는 작은 디테일을 배우는 일이 즐겁고, 사람들을 만나고 귀 기울이고 함께 일할 때 가장 잘합니다.","t110":"여러 역량, <em>한 사람<\/em>","t111":"Canva와 Figma 디자인, 카피라이팅, 분석, 카메라 앞 작업, 그리고 세 가지 언어. 덕분에 아이디어에서 게시까지 콘텐츠 하나를 더 적은 인수인계로 끝낼 수 있습니다.","t112":"세계 챔피언","t113":"WorldSkills 아부다비 모바일 로보틱스 부문 우승.","t114":"R:ED, 상트페테르부르크","t115":"로보틱스 앰배서더, 이후 프로젝트 매니저: 브랜드의 얼굴, 인스타그램, 리브랜딩, 파트너십.","t116":"창의기술경영 · 국제학 전공.","t117":"2024년 8월 – 2025년 1월","t118":"CompassNet, 서울","t119":"인턴으로 시작해 Terminal3, Paymentwall, FasterPay의 디지털 마케팅 스페셜리스트가 되었고, 회사 내 유일한 디지털 마케터로서 콘텐츠, 카피라이팅, 보도 기사, 디자인, 분석을 담당했습니다.","t120":"이후","t121":"StoryTaco & 프리랜서","t122":"StoryTaco에서 시장 분석과 인플루언서 탐색을, 프리랜서로 소규모 사업체를 위한 웹사이트, 브로슈어, 프레젠테이션을 작업했습니다.","t123":"언어 <em>&amp; 학습<\/em>","t124":"러시아어: 모국어","t125":"영어: IELTS C1","t126":"한국어: TOPIK 4급","t127":"HarvardX: 수사학, 설득력 있는 글쓰기와 공개 연설의 기술","t128":"연세대 프로젝트 “K-Culture and the World”: 한국 뷰티 산업 분석","t129":"케이스: <em>CompassNet<\/em>","t130":"CompassNet · 서울","t131":"디지털 마케팅 스페셜리스트 (인턴에서 승진)","t132":"Instagram","t133":"LinkedIn","t134":"카피라이팅","t135":"PR","t136":"영상","t137":"CompassNet에서는 결제 분야의 세 자매 브랜드, 즉 Terminal3, Paymentwall, FasterPay의 마케팅을 담당했습니다. 게임 결제 회사인 Terminal3가 저의 주력 계정이었습니다.","t138":"나의 <em>역할<\/em>","t139":"서울의 디지털 마케팅 스페셜리스트로, 인턴십에서 승진했습니다. 전 세계 디지털 마케팅을 혼자 담당했고 한국의 모든 마케팅을 맡았습니다. 해외에는 이벤트 마케터 두 명과, 제가 보고한 업무를 검토하는 마케팅 매니저 한 명이 있었습니다. Terminal3가 저의 주력 계정이었습니다.","t140":"제가 <em>한 일<\/em>","t141":"세 브랜드의 Instagram과 LinkedIn을 혼자 운영했고(주로 Terminal3), 행사 공지, 연사 홍보, 후기, 명절 게시물 등의 캡션을 모두 하나의 비주얼 체계 안에서 작성했습니다. PR 측면에서는 브랜드 보도 기사를 직접 써서 신문사에 보냈습니다. 지금은 Terminal3의 사진과 영상 곳곳에 등장하는 유니콘 마스코트를 제안했습니다. 행사 사진을 촬영·편집하고, 설명 영상 제작에 참여했으며, 파트너 선물 Book of Magic을 기획부터 완성까지(디자인, 텍스트, 사진 편집) 직접 만들었고, FasterPay의 피드를 새롭게 정비했습니다. 세 브랜드의 계정 성과를 추적하고 연간 마케팅 보고서 작업에 참여했으며, 주요 성과는 이 케이스의 결과 블록에 있습니다.","t142":"왜 <em>Akradex와 맞는가<\/em>","t143":"Akradex는 Cosmoprof, Vietbeauty 같은 전시회에 참가합니다. CompassNet에서도 같은 흐름으로 일했습니다. 행사 전 공지, 현장 커버, 행사 후 리캡을 여러 언어로 진행했습니다. 카피는 정해진 구조를 따랐습니다. 우리가 어디에 있는지, 방문객이 무엇을 기대할 수 있는지, 미팅은 어떻게 예약하는지입니다. Instagram과 LinkedIn을 모두 운영해 보았는데, 전문적인 목소리와 소비자 친화적인 목소리가 모두 필요한 브랜드에 중요한 경험입니다. 기술적인 제품을 짧은 영상으로 설명해 본 경험도 있습니다. 이 모든 것을 회사 내 유일한 디지털 마케터로서 해냈기 때문에 기획, 작성, 디자인, 게시, 보고까지 모두 제 손을 거쳤고, 결과는 매니저가 검토했습니다.","t144":"Terminal3 <em>게시물<\/em>","t145":"행사 공지","t146":"부산 G-Star 참가 안내 Terminal3 카드: 11월 14~16일, 부스 K-703","t147":"<b>G-Star, 부산<\/b>날짜, 부스 번호, 영어와 한국어 이중 언어 캡션이 담긴 공지 카드.","t148":"샌프란시스코 GamesBeat Next 참가 안내 Terminal3 카드: 10월 28~29일","t149":"<b>GamesBeat Next, 샌프란시스코<\/b>도시와 날짜만 바꾼 같은 템플릿으로, 모든 행사가 Terminal3임을 알아볼 수 있게 했습니다.","t150":"키이우 Games Gathering 참가 안내 Terminal3 카드: 12월 6~8일","t151":"<b>Games Gathering, 키이우<\/b>공지에 이어 행사 후 리캡 게시물을 올렸습니다.","t152":"연사 홍보","t153":"인물 사진, 세션 제목, 날짜, 스테이지가 담긴 Terminal3 연사 세션 카드","t154":"<b>세션 홍보, Mobidictum<\/b>연사, 주제, 시간, 스테이지를 카드 한 장에.","t155":"행사 사진","t156":"G-Star 부스 앞에 서 있는 Terminal3 팀","t157":"<b>G-Star 부스 팀<\/b>촬영과 편집: 저.","t158":"명절 게시물","t159":"등각 블록으로 쌓은 트리와 게임 컨트롤러가 있는 Terminal3 메리 크리스마스 게시물","t160":"<b>명절 게시물<\/b>브랜드 컬러의 시즌 게시물: 등각 블록으로 만든 크리스마스 트리와 게임 컨트롤러.","t161":"리캡 게시물","t162":"Gamescom 부스의 볼풀에서 유니콘 마스코트와 포즈를 취한 Terminal3 팀","t163":"<b>Gamescom 리캡<\/b>리캡 게시물: 부스에서 팀과 마스코트.","t164":"손님들 사이에 유니콘 마스코트가 있는 Terminal3 파티의 와이드 앵글 사진","t165":"<b>쾰른 파티<\/b>DJ, 퍼포머, 마스코트가 함께한 저녁 행사의 캐러셀 리캡.","t166":"숏폼 영상","t167":"Terminal3 새해 영상의 한 장면: 플랫포머 게임 장면에서 로켓을 타고 날아가는 유니콘 우주비행사","t168":"<b>새해 영상, 8초<\/b>유니콘 마스코트가 나오는 짧은 게임풍 루프 영상. 팀 프로젝트였고 저도 참여했습니다.","t169":"마스코트는 <em>제 아이디어였습니다<\/em>","t170":"Terminal3의 사진과 영상에 등장하는 유니콘은 제 제안으로 시작되었고 승인되었습니다. 이후 브랜드의 핵심 요소가 되어, 온라인의 게시물과 영상에 나타나고, 이제 사람들은 행사 현장에서 직접 만나기를 기대합니다. 저에게는 하나의 캐릭터가 B2B 결제 브랜드에 사람들이 기억하는 얼굴을 줄 수 있음을 보여 주는 좋은 사례입니다.","t171":"Terminal3 <em>카피라이팅<\/em>","t172":"Terminal3 게시물을 위해 제가 쓴 캡션으로, 게시된 그대로입니다.","t173":"캡션 · G-Star","t174":"영어와 한국어로 작성된 Terminal3 G-Star 게시물 캡션: 날짜, 부스 번호, 연락처 포함","t175":"<b>G-Star, 영어와 한국어<\/b>두 독자층을 위한 하나의 캡션: 날짜, 부스 번호, 연락 방법을 영어와 한국어로 안내합니다.","t176":"캡션 · Mobidictum","t177":"Mobidictum의 두 세션을 홍보하는 Terminal3 게시물 캡션: 연사, 주제, 날짜, 스테이지 포함","t178":"<b>두 세션, 하나의 게시물<\/b>한 게시물에 두 세션을 담았습니다. 연사, 주제, 시간, 스테이지를 안내하고 명확한 행동 유도로 마무리합니다.","t179":"<b>숫자에 대하여.<\/b> 세부 계정 지표는 NDA의 적용을 받기 때문에, 이 부분은 작업물 자체를 보여 드립니다. 2024년 연간 보고서의 주요 성과는 이 케이스 끝에 정리되어 있으며, 성과를 어떻게 추적하고 보고했는지는 면접에서 설명드릴 수 있습니다.","t180":"Terminal3 <em>설명 영상<\/em>","t181":"각 70~85초 분량의 애니메이션 설명 영상 세 편을 Terminal3의 브랜드 에셋으로 Canva에서 제작했고, Terminal3 팀과 함께 만들었습니다. 모든 영상은 타이틀 카드, 혜택 헤드라인 한 줄, 카피 한 줄, 제품 비주얼 하나라는 같은 구조를 따라, 복잡한 결제 상품을 한 번에 하나의 아이디어씩 설명합니다. 가로 형식이며, 세로 버전 계획은 섹션 9에 있습니다.","t182":"설명 영상 1","t183":"결제 과정을 설명하는 Terminal3 설명 영상의 짧은 루프","t184":"<b>왜 Terminal3와 Game Pay인가<\/b>모든 플랫폼에서의 결제, 글로벌 결제, 맞춤형 결제 화면.","t185":"설명 영상 2","t186":"Terminal3 설명 영상의 한 장면: 하나의 스토어, 모든 기기, 제품 목업 포함","t187":"<b>웹숍과 Game Station<\/b>직접 판매: 모든 기기에서 하나의 스토어.","t188":"설명 영상 3","t189":"Merchant of Record를 설명하는 Terminal3 설명 영상의 짧은 루프","t190":"<b>Merchant of Record<\/b>현지 및 글로벌 규정 준수를 단계별로 설명합니다.","t191":"Terminal3 <em>Book of Magic<\/em>","t192":"Terminal3의 연례 PR을 위한 파트너 선물 소책자로, 팀이 전 세계에서 협업한 기업들에 보낸 더 큰 선물 패키지의 일부입니다. 표지부터 마지막 장까지 책 전체를 제가 만들었습니다. 디자인, 텍스트, 사진 편집까지요. 아래는 그중 세 페이지로, 표지, “마법 물건” 페이지, 행사 사진 앨범입니다.","t193":"유니콘과 수정이 있는 블랙과 골드의 Book of Magic 표지","t194":"표지","t195":"치유 수정, 나자르 부적, 허브 캔들 일러스트가 있는 Book of Magic 페이지","t196":"마법 물건","t197":"노란 배경에 행사 사진이 배치된 Book of Magic 포토 앨범 페이지","t198":"포토 앨범","t199":"Paymentwall <em>&amp; FasterPay<\/em>","t200":"CompassNet · 자매 브랜드","t201":"분석","t202":"Terminal3의 자매 브랜드입니다. 두 브랜드에서 제 주된 업무는 분석이었습니다. Paymentwall의 게시물 캡션도 작성했고, FasterPay의 Instagram 피드를 새롭게 정비했습니다.","t203":"Paymentwall <em>카피라이팅<\/em>","t204":"Instagram에 게시된 Paymentwall 계정의 캡션들: 카운트다운 공지, 행사 후 리캡, 짧은 행사 안내, 명절 인사. 모두 같은 논리를 따릅니다. 무슨 일이 일어나는지, 왜 방문해야 하는지, 미팅은 어떻게 예약하는지입니다.","t205":"공지 · Money 20/20","t206":"라스베이거스 Money 20/20을 알리는 Paymentwall 게시물 캡션: 2주 카운트다운, 미팅 예약 초대, 해시태그 포함","t207":"<b>2주 전<\/b>행사 2주 전의 공지: 날짜, 회사가 제공하는 것, 미팅 예약 방법.","t208":"리캡 · Money 20/20","t209":"Money 20/20 이후 Paymentwall 리캡 게시물 캡션: 방문객에 대한 감사와 스페인어권 시장 대상 제품 출시 언급","t210":"<b>행사 후<\/b>리캡: 방문객에 대한 감사, 하이라이트 하나, 다음 계획.","t211":"행사 안내 · Paris Retail Week","t212":"미팅 연락처가 포함된 Paris Retail Week용 Paymentwall 게시물 캡션","t213":"<b>1주 전<\/b>1주 전 안내: 어디서, 왜, 어떻게 예약하는지.","t214":"명절 · 설날","t215":"뱀의 해를 맞는 Paymentwall 설날 인사 캡션","t216":"<b>명절 인사<\/b>브랜드다운 따뜻한 톤의 명절 인사.","t217":"FasterPay <em>피드 리뉴얼<\/em>","t218":"FasterPay는 새로운 제품이었습니다. 이 계정을 맡은 짧은 기간 동안 섞여 있던 카드 스타일과 행사 스냅샷을 정리해, 행사용 카드 체계 하나와 시즌 게시물로 피드를 구성했습니다.","t219":"이전","t220":"리뉴얼 전 FasterPay Instagram 그리드: 다양한 스타일의 2023년 행사 카드와 사진","t221":"<b>이전<\/b>2023년 게시물: 제각각인 카드 스타일과 행사 스냅샷.","t222":"이후","t223":"리뉴얼 후 FasterPay Instagram 게시물: 메리 크리스마스 카드, 부스 사진, Uzakrota 행사 카드, 설날 카드, 명절 영상","t224":"<b>이후<\/b>제가 계정을 맡았던 몇 달간의 게시물: 하나의 컬러 체계와 명절 및 행사 카드.","t225":"2024년 성과 <em>(연간 보고서 기준)<\/em>","t226":"다음은 2024년 Paymentwall, Terminal3, FasterPay에 대한 CompassNet 마케팅팀의 성과로, 연간 마케팅 보고서(2024년 12월)에 기재된 내용입니다. 제 담당은 전 세계 디지털 마케팅 전반이었습니다: SNS 계정, 분석, PR, 브랜딩.","t227":"2024 · 세 브랜드 전체","t228":"디지털 노출수","t229":"2024년 한 해 동안 제가 운영한 계정에서 기록된 수치","t230":"참가한 글로벌 행사","t231":"이벤트팀이 진행","t232":"SNS 참여","t233":"LinkedIn 팔로워","t234":"세 브랜드 합산: 신규 팔로워 7,338명, 총 27,529명","t235":"주력 계정","t236":"Terminal3 <em>숫자로 보기<\/em>","t237":"Terminal3는 제가 가장 많이 운영한 계정이자 2024년 캘린더에서 행사가 가장 많았던 브랜드입니다. 아래는 연간 보고서에 실린 수치입니다.","t238":"리드","t239":"가장 큰 두 컨퍼런스인 GDC(57건)와 Gamescom(55건)에서 확보","t240":"도달 계정","t241":"Instagram 최근 90일 기준, +22.8%","t242":"8배","t243":"팔로워 대비 도달","t244":"팔로워 128명인 계정이 1,053명에게 도달","t245":"비팔로워 비율","t246":"Instagram 노출 중 계정을 팔로우하지 않는 사람들에게서 나온 비중","t247":"<b>LinkedIn:<\/b> 2024년 노출 31,691회, 신규 팔로워 280명(+22%)으로 페이지 팔로워 1,268명.","t248":"Terminal3 vs 자매 브랜드","t249":"Instagram <em>최근 90일<\/em>","t250":"모든 지표에서 Terminal3가 세 브랜드 중 가장 높은 수치를 기록했습니다.","t251":"도달 계정","t252":"콘텐츠를 본 사람 수","t253":"Terminal3","t254":"FasterPay","t255":"Paymentwall","t256":"노출수","t257":"콘텐츠가 노출된 횟수","t258":"상호작용","t259":"좋아요, 댓글, 공유","t260":"Instagram 계정들은 규모가 작습니다. Terminal3는 2024년을 팔로워 128명(−3.8%)으로 마쳤기 때문에, 이 수치는 오디언스 규모가 아니라 도달을 보여 줍니다.","t261":"케이스: <em>R:ED<\/em>","t262":"R:ED Robotics Education","t263":"로보틱스 앰배서더, 이후 프로젝트 매니저","t264":"상트페테르부르크 · 2020 – 2023","t265":"상트페테르부르크에서 로보틱스 앰배서더, 이후 프로젝트 매니저로 일했습니다. 2017년 WorldSkills 아부다비 모바일 로보틱스 부문에서 우승한 뒤 고등학교 졸업 직후 합류했습니다.","t266":"행사, 워크숍, 대회, 라이브 방송에서 브랜드의 얼굴로 활동했습니다. 프로젝트 매니저로서는 디자이너, 개발자와 협업하고 리브랜딩과 Instagram 계정을 운영했으며, 비전문가 청중에게 기술 제품을 설명했습니다.","t267":"2년간의 공개 발표와 카메라 앞 활동, 그리고 팔로워 수가 아니라 PR과 신뢰를 위해 만든 Instagram 계정. 의료 브랜드도 이와 비슷한 방식으로 소통해야 합니다.","t268":"<em>성과<\/em>","t269":"러시아 학교 <span>~100<\/span>곳","t270":"학교와 브랜드에 회사와의 협업을 제안했습니다. 2년에 걸쳐 러시아 약 100개 학교와의 파트너십, 벨라루스와 폴란드에서의 브랜드 계약으로 이어지는 데 기여했습니다.","t271":"이 계정은 팔로워가 아니라 비즈니스 파트너를 얻기 위해 만들어졌습니다.","t272":"Instagram 피드","t273":"붉은 마스코트와 일러스트 그래픽이 하나의 비주얼 체계로 구성된 R:ED Instagram 그리드","t274":"<b>마스코트 중심 피드<\/b>하나의 팔레트로 통일한 일러스트 그래픽.","t275":"브랜드 사진","t276":"흰 테이블에서 두 대의 붉은 로봇 옆에서 소책자를 읽는 여성","t277":"<b>사람 중심 사진<\/b>제품과 사람을 함께 보여 줍니다.","t278":"케이스: <em>Standart<\/em>","t279":"Standart · 보세창고","t280":"프리랜서","t281":"Tilda","t282":"물류 및 보세창고 회사의 프리랜서 디자이너로 일했습니다. 로고, 웹사이트, 회사 소개 자료, 브로슈어, 배너를 제작했습니다.","t283":"Figma 프로토타입을 만든 뒤 Tilda로 실제 사이트를 제작했습니다. 같은 네이비와 골드 체계로 3단 접지 브로슈어와 배너를 디자인했습니다. 브로슈어는 복잡한 물류 서비스를 번호가 매겨진 단계와 큰 숫자 콜아웃으로 풀어냈습니다. 모든 텍스트는 러시아어입니다.","t284":"웹에서 인쇄물까지 하나의 컬러 체계를 유지했고, 복잡한 서비스를 간단한 단계로 설명했습니다. 의료 브랜드의 자료에도 같은 철저함이 요구됩니다.","t285":"Standart · Figma 프로토타입","t286":"노트북에서 Figma로 만든 Standart 웹사이트 프로토타입 화면 녹화","t287":"<b>프로토타입<\/b>먼저 Figma에서 디자인했고, 러시아어와 영어 전환 기능을 넣었습니다.","t288":"Standart · Tilda 실제 사이트","t289":"페이지를 스크롤하는 Standart 실제 웹사이트 화면 녹화","t290":"<b>실제 사이트<\/b>이후 Tilda로 구축: <a href=\"https://llcstandart.ru/\">llcstandart.ru<\/a>","t291":"브로슈어 · 겉면","t292":"슬로건과 핵심 수치가 담긴 네이비와 골드의 Standart 3단 브로슈어 겉면","t293":"<b>브로슈어, 겉면<\/b>슬로건, 핵심 수치, 연락처 패널.","t294":"브로슈어 · 안쪽","t295":"4단계 프로세스와 회사 정보가 담긴 Standart 브로슈어 안쪽","t296":"<b>브로슈어, 안쪽<\/b>4단계 프로세스, 회사 정보, 컨테이너 일러스트.","t297":"배너","t298":"Standart 로고와 슬로건이 담긴 네이비 배너: 보관. 표시. 배송. 더 빠르게 성장하세요.","t299":"<b>배너<\/b>하나의 슬로건과 하나의 포인트 컬러.","t300":"기타 <em>프로젝트<\/em>","t301":"클라이언트가 아니라 주제별로 묶은 소규모 프로젝트들입니다.","t302":"제품 디자인 <em>&amp; 프로토타이핑<\/em>","t303":"Figma의 플로우, 컴포넌트, 공용 스타일. 일관성을 지키는 같은 접근 방식을 SNS 피드와 브랜드에도 적용합니다.","t304":"Samae · 플로우","t305":"Samae 앱의 휴대폰 화면 다섯 개를 보여 주는 슬라이드: 가입, 계정 생성, 로그인, 휴대폰 인증, 국가 선택","t306":"<b>가입부터 인증까지<\/b>다섯 화면, 하나의 플로우.","t307":"Samae · 앱 프로토타입","t308":"Samae 앱 프로토타입 화면 녹화","t309":"<b>Samae, 학생용 수강·학점 앱<\/b>연세대학교 파이널 프로젝트로, 2인 팀이었습니다. 저는 가입, 휴대폰 인증, 시간표, 채팅, 강의 목록, 학점 계산기가 있는 Figma 프로토타입을 만들었습니다. 약 30명의 학생이 테스트했습니다.","t310":"Samae · 비즈니스 모델","t311":"검은 슬라이드 위의 Samae 앱 비즈니스 모델 캔버스","t312":"<b>비즈니스 모델 캔버스<\/b>덱에는 테스트, 피드백, 확장 계획도 담겨 있습니다.","t313":"Area · 사이트 플로우 예시","t314":"Figma Sites로 만든 반응형 웹사이트 화면 녹화","t315":"<b>Figma로 구축한 사이트 플로우<\/b>컴포넌트, 텍스트와 컬러 스타일, 그리고 데스크톱, 태블릿, 모바일 세 가지 레이아웃.","t316":"Dessein · 이벤트 에이전시 사이트","t317":"Dessein 이벤트 에이전시 웹사이트를 스크롤하는 화면 녹화","t318":"<b>이벤트 에이전시 웹사이트<\/b>웨딩·이벤트 에이전시를 위한 사이트로, 프리랜서 프로젝트로 Vigbo에서 제작했으며 러시아어입니다. 서비스 카드 세 개, 문의 양식, SNS 링크로 구성됩니다. 구조와 콘텐츠 결정에 대해 설명드릴 수 있습니다. <a href=\"https://dessein-events.ru/\">dessein-events.ru<\/a>","t319":"프레젠테이션 <em>&amp; 보고서<\/em>","t320":"주로 Canva로 만든 프레젠테이션과 보고서: 회사 연간 보고서, 고객사 소개 자료, 대학 비즈니스 프로젝트 두 건.","t321":"연간 마케팅 보고서, <em>CompassNet<\/em>","t322":"2024년 12월, Paymentwall, Terminal3, FasterPay를 위한 31장 분량의 보고서입니다. 브랜드별 2024년 전략, 채널, 행사, 리드 확보, 예산, SNS 분석, 2025년 전략과 행사 캘린더를 다룹니다. 보고서 작업에 참여했고 Canva로 디자인했습니다.","t323":"보고서의 주요 성과는 섹션 3에 정리되어 있습니다. 예산과 세부 계정 수치는 비공개이며, 면접에서 보고서를 직접 설명드릴 수 있습니다.","t324":"검정과 노랑의 연간 마케팅 보고서 표지 슬라이드","t325":"<b>표지<\/b>세 브랜드를 아우르는 하나의 과감한 팔레트.","t326":"열 개의 번호가 매겨진 섹션이 있는 연간 마케팅 보고서 목차 슬라이드","t327":"<b>목차<\/b>열 개 섹션을 한 페이지에.","t328":"세 브랜드별 마케팅 채널을 체크와 엑스 표시로 정리한 슬라이드","t329":"<b>채널<\/b>세 브랜드를 하나의 표에서 비교.","t330":"콘텐츠 예시와 해시태그가 있는 2025년 소셜 미디어 전략 슬라이드","t331":"<b>2025 소셜 계획<\/b>채널별 콘텐츠 예시와 해시태그.","t332":"회사 소개 자료, <em>Standart<\/em>","t333":"물류 고객사를 위한 6장짜리 회사 소개 프레젠테이션으로, 러시아어이며 웹사이트와 인쇄물과 같은 네이비와 골드 체계를 사용했습니다.","t334":"전체 덱 열기 (PDF, 6슬라이드)","t335":"배송 트럭과 슬로건이 있는 Standart 덱 표지 슬라이드: 보관. 표시. 배송. 더 빠르게 성장하세요.","t336":"<b>표지<\/b>하나의 슬로건과 하나의 포인트 컬러.","t337":"보세 보관, 표시, 관세에 관한 핵심 수치 여섯 개가 담긴 슬라이드","t338":"<b>핵심 수치<\/b>여섯 가지 사실, 하나의 콜아웃 스타일.","t339":"보세창고가 4단계로 어떻게 운영되는지 설명하는 슬라이드","t340":"<b>프로세스<\/b>복잡한 절차를 네 단계로 정리했습니다.","t341":"비즈니스 프로젝트 덱, <em>Samae<\/em>","t342":"연세대학교 학생용 앱 Samae의 파이널 프로젝트 덱: 비즈니스 모델 캔버스, 사용자 플로우, 약 30명 학생 대상 테스트, 피드백, 확장 계획. 위의 제품 디자인 블록에서 두 장의 슬라이드를 보여 드립니다.","t343":"전체 덱 열기 (PDF, 18슬라이드)","t344":"스타트업 프로젝트, <em>Ansi<\/em>","t345":"Ansi는 게임을 하면 자선 기부로 이어지는 K-pop 팬덤 앱으로, AR 포토카드와 커스터마이징 가능한 아이돌 캐릭터가 있습니다. 대학 파이널 프로젝트로 팀이 함께 만들었습니다. 저는 스타트업의 비즈니스 측면을 맡았습니다. 분석, 영업, 기획, 그리고 앱 아이디어를 사업으로 만드는 나머지 모든 단계입니다.","t346":"전체 덱 열기 (PDF, 15슬라이드)","t347":"Ansi · 아이디어","t348":"Ansi 솔루션 슬라이드: 게임을 하면 기부가 된다, 기업 후원, 아티스트의 커스텀 캐릭터로 플레이, 팬덤 친구와 연결","t349":"<b>아이디어<\/b>게임을 하고, 좋은 일에 기부하고, 팬덤과 연결됩니다.","t350":"Ansi · 비즈니스 모델","t351":"파트너, 핵심 활동, 자원, 가치 제안, 수익원, 고객 세그먼트가 있는 Ansi 비즈니스 모델 캔버스","t352":"<b>비즈니스 모델 캔버스<\/b>스타트업의 파트너, 수익원, 비용.","t353":"Ansi · 전략","t354":"Ansi 마케팅 전략 슬라이드와 월 사용자 약 245명의 손익분기점","t355":"<b>마케팅과 손익분기점<\/b>채널과 손익분기에 필요한 월 사용자 수: 약 245명.","t356":"인플루언서 <em>&amp; PR<\/em>","t357":"브리핑부터 보고까지 유료 인플루언서 캠페인을 처음부터 끝까지 운영해 본 적은 아직 없습니다. 아래는 제가 가진 경험과, Akradex에서 캠페인을 어떻게 운영할지에 대한 계획입니다.","t358":"제가 <em>해 온 일<\/em>","t359":"<b>StoryTaco:<\/b> 해외 시장을 분석하고, 협업에 적합한 인플루언서를 찾아 연락했습니다. 탐색과 섭외를 담당했습니다.","t360":"<b>R:ED:<\/b> 2년간 브랜드의 얼굴로 활동하며 학교와 브랜드에 협업을 제안했습니다.","t361":"<b>CompassNet:<\/b> 세 핀테크 브랜드의 한국 내 모든 마케팅을 담당했고, 현지화 PR도 맡았습니다. 보도 기사를 직접 써서 신문사에 보내고 오프라인 행사를 지원했습니다.","t362":"<em>Akradex를 위해<\/em> 이렇게 운영하겠습니다","t363":"<b>발굴:<\/b> 한국과 Akradex의 타깃 시장에서 신뢰할 만한 오디언스를 가진 의료진, 피부 과학 교육자, 클리닉 원장.","t364":"<b>검증:<\/b> 과거 브랜드 협업과 주장을 검토하고, 각 시장의 의료 제품 관련 규정을 따릅니다.","t365":"<b>브리핑:<\/b> 교육이 우선입니다. 회사가 승인한 스크립트, 효과 보장 금지, 비포·애프터 이미지 금지.","t366":"<b>측정:<\/b> 조회수에 더해 저장, 공유, 클리닉과 유통사의 유효 문의를 봅니다.","t367":"왜 <em>Akradex<\/em>인가","t368":"이 직무가 요구하는 바와 맞닿는 제 경력의 세 가지 포인트입니다.","t369":"기술적인 내용을 <em>쉽게<\/em>","t370":"R:ED에서는 학교와 교육기관에 로보틱스를 설명했습니다. CompassNet에서는 여러 산업의 기업을 위한 B2B 마케팅과 결제 상품을 다뤘습니다. 뷰티 사이언스와 화장품이 제가 쉽게 풀어 설명하는 다음 기술 주제가 되면 좋겠습니다.","t371":"행사, <em>여러 언어로<\/em>","t372":"Terminal3의 피드는 전시회를 중심으로 구성되었습니다. 영어·한국어 캡션을 쓴 부산 G-Star, 샌프란시스코 GamesBeat, 키이우 Games Gathering까지. Akradex는 Cosmoprof와 Vietbeauty에 참가하며, 저는 공지, 참가, 리캡으로 이어지는 흐름에 익숙합니다.","t373":"과학에 대한 <em>진짜 관심<\/em>","t374":"연세대 프로젝트 “K-Culture and the World”에서는 한국 뷰티 산업이 시간이 지나며 어떻게 변해 왔는지 분석했습니다. 저는 매일 스킨케어를 하고, 개인 시간에 제형이 어떻게 개발되는지 찾아 읽습니다.","t375":"직선이 아닌 경로를 <em>강점으로<\/em>","t376":"이전에도 산업을 바꿔 보았고, 매번 고객에게 설명할 수 있을 만큼 제품을 충분히 익혔습니다. 다음은 미용 의학이 될 것입니다. 같은 방법을 가져오겠습니다. 전문가와 함께 제품을 이해하고, 명확하게 쓰고, 브랜드의 일관성을 지키고, 게시 전에 모든 주장을 확인합니다.","t377":"모든 메시지에서 <em>사람이 먼저<\/em>","t378":"미용 의학은 개인적인 영역입니다. 사람들은 희망, 신뢰, 때로는 의구심이 섞인 마음으로 결정하고, 좋은 커뮤니케이션은 그 셋을 모두 존중합니다. 저는 마케팅의 이런 인간적인 면을 이해하는 일이 즐겁고, 동료와 의료진부터 고객까지 사람들과 함께 일하는 것을 좋아합니다. 명확하고, 따뜻하고, 정직한 커뮤니케이션이 제가 Akradex에 가져올 것입니다.","t379":"<em>Akradex<\/em>를 위한 아이디어","t380":"입사 첫 달에 제안하고 싶은 다섯 가지 콘셉트입니다. Akradex의 콘텐츠가 아니라 저의 아이디어이며, 아래 레이아웃은 간단한 스케치입니다. 2026년 업계 보도는 스킨 부스터와 재생 시술에 대한 관심이 커지고 있고, 의사들이 바이럴 트렌드를 팩트체크하고 있음을 보여 주며, 이는 차분하고 전문가가 이끄는 피드가 설 자리가 있음을 뜻합니다.","t381":"콘셉트 A · 캐러셀","t382":"펩타이드일까, 콜라겐일까? <em>서로 다른 두 가지 역할.<\/em>","t383":"5장 중 1번 슬라이드","t384":"펩타이드와 콜라겐, 쉬운 말로","t385":"후킹 질문","t386":"콜라겐이란","t387":"펩타이드란","t388":"클리닉에서 각각이 쓰이는 곳 (회사 승인)","t389":"“의료진과 상담하세요”와 링크","t390":"Canva 또는 Figma, 1080 × 1350. 모든 사실은 Akradex 의료팀이 제공하고 확인합니다.","t391":"콘셉트 B · 시리즈","t392":"미신 <em>or<\/em> 사실?","t393":"“매일 밤 5~7가지 제품을 겹쳐 바르면 수분이 더 많이 공급된다.”","t394":"바이럴 주장에 대한 의사의 답변","t395":"따옴표로 표시한 주장","t396":"영상 속 또는 인용 카드로 보여 주는 의료진의 답변","t397":"한 줄 요약","t398":"반복되는 레이아웃에 게시물당 하나의 주장, 1080 × 1350. 답변은 반드시 의료진에게서만 받습니다.","t399":"콘셉트 C · 릴스 또는 캐러셀","t400":"연구실에서 <em>클리닉까지<\/em>","t401":"제품이 어떻게 만들어지고 검증되는지.","t402":"비하인드 더 씬","t403":"연구실","t404":"품질 검사","t405":"포장","t406":"클리닉 도착","t407":"회사가 승인한 영상과 사실만 사용합니다. 제형이 어떻게 만들어지는지에 대한 저의 관심을 반영한 콘셉트입니다.","t408":"콘셉트 D · <em>15초로 보는 부스<\/em>","t409":"Terminal3 행사 업무를 바탕으로 한, Cosmoprof, Vietbeauty 등 전시회를 위한 세로형 리캡 릴스.","t410":"부스 전경, 3초","t411":"제품 클로즈업, 3초","t412":"의사 시연, 3초","t413":"미팅 또는 악수, 3초","t414":"엔드 카드: “다음 전시회에서 만나요”, 3초","t415":"1080 × 1920, 영어와 현지 언어 캡션, 사용이 허가된 음악.","t416":"콘셉트 E · <em>전문가에게 물어보세요<\/em>","t417":"30초 릴스: 팔로워의 질문 하나, 카메라를 보고 답하는 의료진 한 명.","t418":"화면 속 질문, 3초","t419":"의료진의 답변, 약 20초","t420":"두 가지 언어 캡션","t421":"제품 라인이 담긴 엔드 카드","t422":"같은 형식을 매주 반복하므로 한꺼번에 촬영할 수 있습니다.","t423":"의료 제품의 광고 규정은 시장마다 다릅니다. 위의 모든 게시물은 게시 전에 Akradex 의료·규제팀의 승인이 필요합니다.","t424":"<em>놀라운 일<\/em>을 함께 만들어 봐요.","t425":"이메일: <span id=\"mailtxt\" style=\"user-select:all\">sofiiagorpenko@gmail.com<\/span>","t426":"이메일 주소 복사","t427":"메일 보내기","t428":"명함입니다. 눌러서 뒤집어 보세요","t429":"Sofiia<br/>Gorpenko","t430":"뒤집기 ↻","t431":"<em>인사<\/em>해 주세요","t432":"이메일","t433":"sofiiagorpenko@gmail.com","t434":"sofiia-gorpenko","t435":"<b>거주지<\/b>대한민국 서울","t436":"LinkedIn QR 스캔","t437":"카드를 탭하거나 클릭하면 뒤집힙니다.","t438":"콘셉트 자료는 회사 콘텐츠가 아니라 저의 아이디어입니다.","tTitle":"Sofiia Gorpenko 포트폴리오","tL":"언어","tQ":"Sofiia Gorpenko의 LinkedIn 프로필로 연결되는 QR 코드"}</script>
+<script type="application/json" id="i18n-ru">{"t001":"Разделы","t002":"SG.","t003":"Навыки","t004":"Путь","t005":"CompassNet","t006":"R:ED","t007":"Standart","t008":"Другие проекты","t009":"Почему Akradex","t010":"Идеи","t011":"Контакты","t012":"Привет, я","t013":"Sofiia","t014":"Gorpenko","t015":"Специалист по цифровому маркетингу","t016":"Я делаю сложные продукты понятными и люблю изучать, что движет людьми: что они замечают, чему доверяют и что запоминают. Мой путь нелинейный: он начался с международного титула по мобильной робототехнике и прошёл через индустрии финтеха, игр, логистики и координации мероприятий — и всё это на трёх языках. И это моя главная сила: каждая новая отрасль учила меня быстро адаптироваться и изучать и понимать новую аудиторию.","t017":"Сеул, Южная Корея","t018":"Русский · Английский · Корейский","t019":"Университет Ёнсе","t020":"Портрет Sofiia Gorpenko","t021":"Sofiia Gorpenko со скрещёнными руками смотрит в сторону","t022":"Цифровой маркетинг, ивент-маркетинг, брендинг, аналитика, UX/UI-дизайн, копирайтинг","t023":"Цифровой маркетинг <i>·<\/i> Ивент-маркетинг <i>·<\/i> Брендинг <i>·<\/i> Аналитика <i>·<\/i> UX/UI-дизайн <i>·<\/i> Копирайтинг <i>·<\/i>","t024":"<em>Содержание<\/em>","t025":"Навыки и инструменты","t026":"Инструменты с честными уровнями, навыки и места, где каждый из них показан.","t027":"Мой путь","t028":"Нелинейный путь и почему это сила.","t029":"Кейс: CompassNet","t030":"Посты, копирайтинг, статьи для прессы, видео и аналитика для трёх брендов.","t031":"Кейс: R:ED","t032":"Лицо бренда, Instagram и партнёрства, 2020–2023.","t033":"Кейс: Standart","t034":"Логотип, сайт, печатная продукция и презентация компании.","t035":"Дизайн продуктов, сайты, презентации и отчёты.","t036":"Инфлюенсеры и PR","t037":"Мой опыт и план для Akradex.","t038":"Где мой опыт совпадает с задачами роли.","t039":"Идеи для Akradex","t040":"Пять идей контент-концепций от меня.","t041":"Навыки <em>и инструменты<\/em>","t042":"Инструменты, которыми я пользуюсь, навыки, которые за ними стоят, и места в портфолио, где каждый из них показан. Уровни владения указаны как есть, а то, что я ещё не делала, отмечено.","t043":"Ca","t044":"Canva","t045":"Уверенно","t046":"Мой основной инструмент дизайна: посты для соцсетей, презентации, отчёты, печать и видео.","t047":"Fi","t048":"Figma","t049":"Прототипы приложений и сайтов с компонентами и общими стилями.","t050":"Cu","t051":"CapCut","t052":"Хорошо","t053":"Монтаж коротких видео для соцсетей.","t054":"AI","t055":"ChatGPT & Claude","t056":"Каждый день","t057":"Контент-календари, планирование и черновики, которые я всегда переписываю и проверяю на достоверность.","t058":"Pr","t059":"Premiere Pro","t060":"Пока нет","t061":"Пока не использовала. Для монтажа мне пока хватает CapCut.","t062":"Il","t063":"Illustrator","t064":"Пока не использовала. Печатные макеты я до сих пор делала в Canva.","t065":"Маркетинг и <em>аналитические навыки<\/em>","t066":"Данные и аналитика","t067":"Отслеживание эффективности аккаунтов трёх брендов, анализ того, что влияет на вовлечённость, и работа над годовыми маркетинговыми отчётами. <a href=\"#social\">Раздел 3<\/a> · <a href=\"#more\">Раздел 6<\/a>","t068":"Excel и таблицы","t069":"Отслеживание, отчётность и анализ данных по маркетинговым аккаунтам.","t070":"SEO и платная реклама","t071":"Практические знания SEO. Платные поисковые и социальные кампании я пока сама не запускала и хотела бы набраться этого опыта на каналах Akradex.","t072":"Автоматизация маркетинга и CRM","t073":"Email-маркетинг и работа с клиентами через CRM: ведение лидов и сопровождение пути клиента по каналам.","t074":"Веб и технологическая грамотность","t075":"Создавала и запускала сайты на Tilda и Vigbo, прототипировала сайты в Figma, поэтому могу быстро собирать и тестировать лендинги. Базовые Python и JavaScript. <a href=\"#standart\">Раздел 5<\/a>","t076":"Поиск инфлюенсеров и коммуникация","t077":"Анализ рынка, поиск инфлюенсеров и коммуникация с ними в StoryTaco, а также четырёхшаговый план работы с инфлюенсерами для Akradex. <a href=\"#influence\">Раздел 7<\/a>","t078":"Креатив и <em>стратегические навыки<\/em>","t079":"Копирайтинг и сторителлинг","t080":"Подписи, анонсы и сценарии с чёткой структурой для Terminal3 и Paymentwall, адаптированные под платформу и аудиторию. Я также писала новостные статьи о событиях и новостях брендов и отправляла их в газеты. В R:ED я рассказывала историю бренда через собственный опыт чемпионки мира. <a href=\"#social\">Раздел 3<\/a>","t081":"Соцсети и видеоконтент","t082":"Посты под специфику Instagram и LinkedIn, фотосъёмка мероприятий и короткие видео — от контент-календарей до итоговых публикаций. Объясняющие ролики и лупы вместе с командой Terminal3, а также быстрый монтаж в CapCut. <a href=\"#social\">Раздел 3<\/a>","t083":"ИИ и гибкость в рабочих процессах","t084":"ChatGPT и Claude каждый день: для исследований, планирования, вариантов и первых черновиков. Всё я переписываю и проверяю сама; стратегия и голос бренда остаются за мной.","t085":"Дизайн и UX-мышление","t086":"Аккуратная вёрстка, визуальная иерархия и мышление от пользователя в постах, презентациях, печати и сайтах, с единой системой шаблонов для каждого бренда. Студенческое приложение Samae тестировали около 30 пользователей. <a href=\"#more\">Раздел 6<\/a> · <a href=\"#standart\">Раздел 5<\/a>","t087":"Экспертиза: <em>что я приношу<\/em>","t088":"Объяснение технических продуктов","t089":"Робототехника для школ и институтов в R:ED и B2B-маркетинг и платёжные продукты для компаний разных отраслей в CompassNet. Следующей темой должны стать наука о красоте и косметика.","t090":"Мероприятия","t091":"Контент для соцсетей вокруг мероприятий на нескольких языках: анонс до выставки, освещение на месте, итоги после. <a href=\"#social\">Раздел 3<\/a>","t092":"PR и брендинг","t093":"Два года я была лицом R:ED, где также участвовала в ребрендинге и в PR, нацеленном на партнёров и доверие, а не на число подписчиков. В CompassNet я вела весь маркетинг в Корее, включая локальный PR: писала новостные статьи и рассылала их в газеты, а также участвовала в офлайн-мероприятиях. Кроме того, я держала каждый бренд в единой визуальной системе — от постов в соцсетях до печатной продукции. <a href=\"#red\">Раздел 4<\/a> · <a href=\"#social\">Раздел 3<\/a>","t094":"Вхождение в новые отрасли","t095":"Четыре отрасли на данный момент, и каждую я освоила достаточно, чтобы объяснять её клиентам. <a href=\"#path\">Раздел 2<\/a>","t096":"Понимание людей","t097":"Поведение потребителей и управление брендом в Университете Ёнсе, убедительное письмо и публичные выступления на HarvardX, два года выступлений перед живой аудиторией. Мне нравится узнавать, что мотивирует людей, и я использую это в текстах, дизайне и планировании контента. <a href=\"#path\">Раздел 2<\/a>","t098":"Языки","t099":"Русский — родной, английский IELTS C1, корейский TOPIK 4.","t100":"Перед <em>камерой<\/em>","t101":"Мне комфортно перед камерой. Два года я выступала от лица R:ED на мероприятиях, мастер-классах, соревнованиях и прямых эфирах, а ещё снимала фото с мероприятий для Terminal3. Вертикальных коротких видео я делала немного, потому что TikTok не был привычным каналом для финтех-брендов, хотя я предлагала его добавить. Развивать этот навык в бренде, где он уместен, — моя главная цель.","t102":"Мой <em>путь<\/em>","t103":"Мой опыт охватывает робототехнику, платежи в играх, логистику и ивент-агентства. Это не прямая линия, и я считаю это своей главной силой. Общая нить во всех ролях одна: быстро разобраться в продукте, ясно его объяснить и сохранять единообразие бренда везде, где он появляется.","t104":"Быстро <em>учусь<\/em>","t105":"Я начинала с нуля в четырёх отраслях и в каждой в итоге быстро овладевала глубокими знаниями продукта и индустрии. Быстро влиться в сферу эстетической медицины — задача, к которой я знаю, как подступиться.","t106":"Быстро <em>анализирую<\/em>","t107":"Чёткая структура анонсов, единая визуальная система и честные объяснения одинаково работали и в робототехнике, и в платежах, и в логистике. Я знаю, какие части коммуникации бренда остаются постоянными, а какие меняются вместе с аудиторией.","t108":"Люди — <em>прежде всего<\/em>","t109":"Маркетинг — это разговор с людьми, поэтому я изучаю, как они думают, чувствуют и принимают решения. Мне нравится узнавать мелочи, которые формируют доверие, и лучше всего я работаю, когда встречаюсь с людьми, слушаю их и работаю вместе.","t110":"Много навыков — <em>один человек<\/em>","t111":"Дизайн в Canva и Figma, копирайтинг, аналитика, работа на камеру и три языка. Это позволяет мне провести контент от идеи до опубликованного поста с меньшим числом передач между людьми.","t112":"Чемпионка мира","t113":"Победительница в категории «Мобильная робототехника» на WorldSkills в Абу-Даби.","t114":"R:ED, Санкт-Петербург","t115":"Амбассадор по робототехнике, затем проектный менеджер: лицо бренда, Instagram, ребрендинг и партнёрства.","t116":"Степени по управлению креативными технологиями и международным отношениям.","t117":"Авг 2024 – янв 2025","t118":"CompassNet, Сеул","t119":"Стажёр, затем специалист по цифровому маркетингу Terminal3, Paymentwall и FasterPay и единственный диджитал-маркетолог в компании: контент, копирайтинг, статьи для прессы, дизайн и аналитика.","t120":"Затем","t121":"StoryTaco и фриланс","t122":"Анализ рынка и поиск инфлюенсеров в StoryTaco; сайты, брошюры и презентации для малого бизнеса.","t123":"Языки <em>и учёба<\/em>","t124":"Русский: родной","t125":"Английский: IELTS C1","t126":"Корейский: TOPIK, уровень 4","t127":"HarvardX: Риторика — искусство убедительного письма и публичных выступлений","t128":"Проект в Ёнсе «K-Culture and the World»: анализ корейской бьюти-индустрии","t129":"Кейс: <em>CompassNet<\/em>","t130":"CompassNet · Сеул","t131":"Специалист по цифровому маркетингу (повышена со стажёра)","t132":"Instagram","t133":"LinkedIn","t134":"Копирайтинг","t135":"PR","t136":"Видео","t137":"В CompassNet я занималась маркетингом трёх родственных брендов в сфере платежей: Terminal3, Paymentwall и FasterPay. Terminal3 — компания по платежам в играх — был моим основным аккаунтом.","t138":"Моя <em>роль<\/em>","t139":"Специалист по цифровому маркетингу в Сеуле, повышена со стажёра. Я была единственным сотрудником, отвечавшим за цифровой маркетинг в компании среди всех филиалов. Terminal3 был моим основным аккаунтом. Планирование, тексты, дизайн, публикации и отчётность были в моих руках, а результаты проверял менеджер.","t140":"Что я <em>делала<\/em>","t141":"Самостоятельно вела Instagram и LinkedIn всех трёх брендов, в основном Terminal3, и писала подписи: анонсы мероприятий, промо спикеров, итоговые и праздничные посты — всё в единой визуальной системе. В части PR писала для брендов новостные статьи и отправляла их в газеты. Предложила единорога-маскота, который теперь появляется на фото и видео Terminal3. Снимала и обрабатывала фото с мероприятий, участвовала в создании объясняющих роликов, от начала до конца сделала партнёрский подарок Book of Magic (дизайн, текст и обработка фото) и обновила ленту FasterPay. Отслеживала эффективность аккаунтов всех трёх брендов и работала над годовым маркетинговым отчётом; основные результаты — в блоке результатов этого кейса.","t142":"Почему это <em>подходит Akradex<\/em>","t143":"Akradex участвует в отраслевых выставках, таких как Cosmoprof и Vietbeauty. В CompassNet я работала по тому же циклу: анонс до мероприятия, освещение на месте и итоги после, на нескольких языках. Тексты строились по фиксированной схеме: где мы находимся, что может ожидать посетитель и как записаться на встречу. Я работала и с Instagram, и с LinkedIn — это важно для бренда, которому нужен и профессиональный голос, и голос для потребителей. Я также объясняла технический продукт в коротком видео.","t144":"Посты <em>Terminal3<\/em>","t145":"Анонс мероприятия","t146":"Анонс Terminal3 для выставки G-Star в Пусане, 14–16 ноября, стенд K-703","t147":"<b>G-Star, Пусан<\/b>Карточка-анонс с датами, номером стенда и двуязычной подписью на английском и корейском.","t148":"Анонс Terminal3 для GamesBeat Next, Сан-Франциско, 28–29 октября","t149":"<b>GamesBeat Next, Сан-Франциско<\/b>Тот же шаблон с новым городом и датами, чтобы каждое мероприятие узнавалось как Terminal3.","t150":"Анонс Terminal3 для Games Gathering, Киев, 6–8 декабря","t151":"<b>Games Gathering, Киев<\/b>Анонс, а после мероприятия — пост с итогами.","t152":"Промо спикера","t153":"Карточка сессии спикера Terminal3 с портретом, названием сессии, датой и сценой","t154":"<b>Промо сессии, Mobidictum<\/b>Спикер, тема, время и сцена на одной карточке.","t155":"Фото с мероприятия","t156":"Команда Terminal3 перед стендом на G-Star","t157":"<b>Команда на стенде G-Star<\/b>Фото и обработка: я.","t158":"Праздничный пост","t159":"Рождественский пост Terminal3: ёлка из изометрических блоков и игровой контроллер","t160":"<b>Праздничный пост<\/b>Сезонный пост в цветах бренда: ёлка из изометрических блоков с игровым контроллером.","t161":"Пост с итогами","t162":"Команда Terminal3 позирует в бассейне с шариками на стенде Gamescom вместе с маскотом-единорогом","t163":"<b>Итоги Gamescom<\/b>Пост с итогами: команда и маскот на стенде.","t164":"Широкоугольное фото вечеринки Terminal3: маскот-единорог среди гостей","t165":"<b>Вечеринка в Кёльне<\/b>Карусель с итогами вечернего мероприятия: диджей, артисты и маскот.","t166":"Короткое видео","t167":"Кадр из новогоднего ролика Terminal3: единорог-астронавт летит на ракете в сцене платформера","t168":"<b>Новогодний ролик, 8 секунд<\/b>Короткий игровой луп с маскотом-единорогом. Командный проект; я участвовала.","t169":"Маскот был <em>моей идеей<\/em>","t170":"Единорог, который появляется на фото и видео Terminal3, начался с моего предложения, и оно было одобрено. С тех пор он стал неотъемлемой частью бренда: он появляется онлайн в постах и роликах, а люди теперь с нетерпением ждут встречи с ним лично на мероприятиях. Для меня это хороший пример того, как один персонаж может дать B2B-платёжному бренду лицо, которое запоминают.","t171":"<em>Копирайтинг<\/em> Terminal3","t172":"Подписи, которые я писала для постов Terminal3, в том виде, в котором они были опубликованы.","t173":"Подпись · G-Star","t174":"Подпись к посту Terminal3 о G-Star на английском и корейском с датами, номером стенда и контактным адресом","t175":"<b>G-Star, английский и корейский<\/b>Одна подпись для двух аудиторий: даты, номер стенда и способ связи на английском и корейском.","t176":"Подпись · Mobidictum","t177":"Подпись к посту Terminal3 о двух сессиях на Mobidictum со спикерами, темами, датами и сценами","t178":"<b>Две сессии — один пост<\/b>Две сессии в одном посте: спикер, тема, время и сцена, с чётким призывом к действию в конце.","t179":"<b>О цифрах.<\/b> Подробные метрики аккаунтов защищены NDA, поэтому в этой части страницы показана сама работа. Основные результаты из годового отчёта за 2024 год кратко приведены в конце этого кейса, а как я отслеживала и описывала результаты, смогу рассказать на собеседовании.","t180":"<em>Объясняющие видео<\/em> Terminal3","t181":"Три анимированных ролика по 70–85 секунд каждый, сделанных в Canva из брендовых материалов Terminal3 вместе с командой Terminal3. Каждое видео построено одинаково: титульная карточка, один заголовок-выгода, одна строка текста и один визуал продукта, так что сложный платёжный продукт объясняется по одной идее за раз. Они в горизонтальном формате; мой план вертикальных версий — в разделе 9.","t182":"Ролик 1","t183":"Короткий луп из ролика Terminal3 о процессе оплаты","t184":"<b>Почему Terminal3 и Game Pay<\/b>Оплата на любой платформе, платежи по всему миру и настраиваемая страница оплаты.","t185":"Ролик 2","t186":"Кадр из ролика Terminal3: один магазин, все устройства, с макетами продуктов","t187":"<b>Webshop и Game Station<\/b>Прямые продажи: один магазин на всех устройствах.","t188":"Ролик 3","t189":"Короткий луп из ролика Terminal3 о merchant of record","t190":"<b>Merchant of record<\/b>Локальное и глобальное соответствие требованиям, объяснённое шаг за шагом.","t191":"Terminal3 <em>Book of Magic<\/em>","t192":"Подарочная брошюра для партнёров к ежегодному PR Terminal3, часть более крупного подарка, отправленного компаниям, с которыми команда работала по всему миру. Всю книгу от начала до конца сделала я: дизайн, текст и обработку фото. Ниже три её страницы: обложка, страница «магических предметов» и фотоальбом мероприятий.","t193":"Обложка Book of Magic в чёрном и золотом с единорогом и кристаллами","t194":"Обложка","t195":"Страница Book of Magic с иллюстрациями целебных кристаллов, оберега от сглаза и травяной свечи","t196":"Магические предметы","t197":"Страница фотоальбома Book of Magic с фото с мероприятий на жёлтом фоне","t198":"Фотоальбом","t199":"Paymentwall <em>&amp; FasterPay<\/em>","t200":"CompassNet · родственные бренды","t201":"Аналитика","t202":"Родственные бренды Terminal3. Моя основная работа по обоим — аналитика. Я также писала подписи к постам Paymentwall и обновила ленту FasterPay в Instagram.","t203":"<em>Копирайтинг<\/em> Paymentwall","t204":"Подписи из аккаунта Paymentwall в Instagram в опубликованном виде: анонс с обратным отсчётом, пост с итогами, короткое уведомление о мероприятии и праздничное поздравление. У всех одна логика: что происходит, зачем приходить и как записаться на встречу.","t205":"Анонс · Money 20/20","t206":"Подпись к посту Paymentwall с анонсом Money 20/20 в Лас-Вегасе: двухнедельный отсчёт, приглашение записаться на встречу и хэштеги","t207":"<b>За две недели<\/b>Анонс за две недели до мероприятия: даты, что предлагает компания и как записаться на встречу.","t208":"Итоги · Money 20/20","t209":"Подпись к посту Paymentwall с итогами Money 20/20: благодарность посетителям и упоминание запуска продукта для испаноязычного рынка","t210":"<b>После выставки<\/b>Итоги: благодарность посетителям, одно главное событие и что дальше.","t211":"Уведомление · Paris Retail Week","t212":"Подпись к посту Paymentwall о Paris Retail Week с контактным адресом для встреч","t213":"<b>За неделю<\/b>Уведомление за неделю: где, зачем и как записаться.","t214":"Праздник · Лунный Новый год","t215":"Подпись к поздравлению Paymentwall с Лунным Новым годом — годом Змеи","t216":"<b>Праздничное поздравление<\/b>Поздравление в тёплом тоне, соответствующем бренду.","t217":"Обновление ленты <em>FasterPay<\/em>","t218":"FasterPay был новым продуктом. За короткое время работы с аккаунтом я заменила смесь разных стилей карточек и снимков с мероприятий единой системой карточек для мероприятий и сезонными постами.","t219":"До","t220":"Лента FasterPay в Instagram до обновления: карточки и фото мероприятий 2023 года в разных стилях","t221":"<b>До<\/b>Посты 2023 года: разные стили карточек и снимки с мероприятий.","t222":"После","t223":"Посты FasterPay в Instagram после обновления: рождественская открытка, фото стенда, карточка мероприятия Uzakrota, открытка к Лунному Новому году и праздничный клип","t224":"<b>После<\/b>Посты за месяцы моей работы с аккаунтом: одна цветовая система, праздничные карточки и карточки мероприятий.","t225":"Результаты 2024 года <em>из годового отчёта<\/em>","t226":"Это результаты команды по маркетингу CompassNet по Paymentwall, Terminal3 и FasterPay за 2024 год, приведённые в годовом отчёте (декабрь 2024). Моя часть — весь цифровой маркетинг: аккаунты в соцсетях, аналитика, PR и брендинг.","t227":"2024 · все три бренда","t228":"цифровых показов","t229":"за 2024 год с аккаунтов, которые я вела","t230":"мероприятий по всему миру","t231":"проводила ивент-команда","t232":"вовлечённость в соцсетях","t233":"подписчиков в LinkedIn","t234":"по трём брендам: 7 338 новых подписчиков, всего 27 529","t235":"Основной аккаунт","t236":"Terminal3 <em>в цифрах<\/em>","t237":"Terminal3 был аккаунтом, которым я занималась больше всего, и брендом с наибольшим числом мероприятий в календаре 2024 года. Вот его показатели из годового отчёта.","t238":"лидов","t239":"с GDC (57) и Gamescom (55) — двух главных конференций","t240":"охваченных аккаунтов","t241":"в Instagram за последние 90 дней, +22,8%","t242":"8×","t243":"охват относительно подписчиков","t244":"1 053 охвачено аккаунтом со 128 подписчиками","t245":"не от подписчиков","t246":"показов в Instagram пришлось на людей, не подписанных на аккаунт","t247":"<b>LinkedIn:<\/b> 31 691 показ в 2024 году и 280 новых подписчиков (+22%), всего на странице 1 268.","t248":"Terminal3 и родственные бренды","t249":"Instagram <em>за последние 90 дней<\/em>","t250":"У Terminal3 по каждому показателю были самые высокие значения среди трёх брендов.","t251":"Охваченные аккаунты","t252":"люди, увидевшие контент","t253":"Terminal3","t254":"FasterPay","t255":"Paymentwall","t256":"Показы","t257":"сколько раз контент был показан","t258":"Взаимодействия","t259":"лайки, комментарии и репосты","t260":"Аккаунты в Instagram небольшие. Terminal3 закончил 2024 год со 128 подписчиками (−3,8%), так что эти цифры показывают охват, а не размер аудитории.","t261":"Кейс: <em>R:ED<\/em>","t262":"R:ED Robotics Education","t263":"Амбассадор по робототехнике, затем проектный менеджер","t264":"Санкт-Петербург · 2020 – 2023","t265":"Амбассадор по робототехнике, затем проектный менеджер в Санкт-Петербурге. Я пришла сразу после школы, выиграв в категории «Мобильная робототехника» на WorldSkills в Абу-Даби в 2017 году.","t266":"Была лицом бренда на мероприятиях, мастер-классах, соревнованиях и прямых эфирах. Как проектный менеджер работала с дизайнерами и разработчиками, вела ребрендинг и аккаунт в Instagram и объясняла технические продукты нетехнической аудитории.","t267":"Два года публичных выступлений и работы на камеру, а также аккаунт в Instagram, построенный ради PR и доверия, а не числа подписчиков. Медицинскому бренду нужно общаться похожим образом.","t268":"К чему это <em>привело<\/em>","t269":"<span>~100<\/span> школ в России","t270":"Я приглашала школы и бренды к сотрудничеству с компанией. За два года это способствовало партнёрствам примерно со 100 школами в России и сделкам с брендами в Беларуси и Польше.","t271":"Аккаунт строился, чтобы привлекать бизнес-партнёров, а не подписчиков.","t272":"Лента Instagram","t273":"Сетка Instagram R:ED с красным маскотом и иллюстрированной графикой в единой визуальной системе","t274":"<b>Лента с маскотом<\/b>Иллюстрированная графика в одной палитре.","t275":"Фото бренда","t276":"Женщина читает буклет рядом с двумя красными роботами за белым столом","t277":"<b>Фотографии, где люди на первом месте<\/b>Продукт и человек показаны вместе.","t278":"Кейс: <em>Standart<\/em>","t279":"Standart · таможенный склад","t280":"Фриланс","t281":"Tilda","t282":"Внештатный дизайнер для логистической компании с таможенным складом. Создала логотип, сайт, презентацию компании, брошюру и баннер.","t283":"Сделала прототип в Figma, затем живой сайт на Tilda. Разработала трёхсложную брошюру и баннер в той же тёмно-синей и золотой системе. Брошюра превращает плотное логистическое предложение в пронумерованные шаги и крупные цифры-акценты. Весь текст на русском.","t284":"Единая цветовая система от веба до печати и сложная услуга, объяснённая простыми шагами. Материалам медицинского бренда нужна такая же дисциплина.","t285":"Standart · прототип в Figma","t286":"Запись экрана прототипа сайта Standart в Figma на ноутбуке","t287":"<b>Прототип<\/b>Сначала спроектирован в Figma, с переключателем русского и английского.","t288":"Standart · живой сайт на Tilda","t289":"Запись экрана живого сайта Standart с прокруткой страницы","t290":"<b>Живой сайт<\/b>Затем собран на Tilda: <a href=\"https://llcstandart.ru/\">llcstandart.ru<\/a>","t291":"Брошюра · снаружи","t292":"Внешняя сторона трёхсложной брошюры Standart в тёмно-синем и золотом со слоганом и ключевыми цифрами","t293":"<b>Брошюра, снаружи<\/b>Слоган, ключевые цифры и панель с контактами.","t294":"Брошюра · внутри","t295":"Внутренняя сторона брошюры Standart с четырёхшаговым процессом и информацией о компании","t296":"<b>Брошюра, внутри<\/b>Четырёхшаговый процесс, факты о компании и иллюстрация контейнера.","t297":"Баннер","t298":"Тёмно-синий баннер с логотипом Standart и слоганом: Хранить. Маркировать. Доставлять. Расти быстрее.","t299":"<b>Баннер<\/b>Один слоган и один акцентный цвет.","t300":"Другие <em>проекты<\/em>","t301":"Небольшие проекты, сгруппированные по темам, а не по клиентам.","t302":"Дизайн продуктов <em>и прототипирование<\/em>","t303":"Сценарии, компоненты и общие стили в Figma. Тот же подход к единообразию работает и для ленты соцсетей, и для бренда.","t304":"Samae · сценарии","t305":"Слайд с пятью экранами телефона приложения Samae: регистрация, создание аккаунта, вход, подтверждение телефона и выбор страны","t306":"<b>От регистрации до подтверждения<\/b>Пять экранов, один сценарий.","t307":"Samae · прототип приложения","t308":"Запись экрана прототипа приложения Samae","t309":"<b>Samae — студенческое приложение для курсов и GPA<\/b>Финальный проект в Ёнсе, в команде из двух человек. Я сделала прототип в Figma: регистрация, подтверждение телефона, расписание, чат, список курсов и калькулятор GPA. Его тестировали около 30 студентов.","t310":"Samae · бизнес-модель","t311":"Канва бизнес-модели приложения Samae на чёрном слайде","t312":"<b>Канва бизнес-модели<\/b>В презентации также описаны тестирование, обратная связь и масштабирование.","t313":"Area · пример сценария сайта","t314":"Запись экрана адаптивного сайта, сделанного в Figma Sites","t315":"<b>Сценарий сайта, собранный в Figma<\/b>Компоненты, стили текста и цвета и три макета: десктоп, планшет, мобильный.","t316":"Dessein · сайт ивент-агентства","t317":"Запись экрана с прокруткой сайта ивент-агентства Dessein","t318":"<b>Сайт ивент-агентства<\/b>Сайт для свадебного и ивент-агентства, сделанный на Vigbo как фриланс-проект, на русском языке: три карточки услуг, форма заявки и ссылки на соцсети. Могу рассказать о структуре и решениях по контенту. <a href=\"https://dessein-events.ru/\">dessein-events.ru<\/a>","t319":"Презентации <em>и отчёты<\/em>","t320":"Презентации и отчёты, в основном сделанные в Canva: годовой отчёт компании, презентация клиентской компании и два университетских бизнес-проекта.","t321":"Годовой маркетинговый отчёт, <em>CompassNet<\/em>","t322":"Отчёт из 31 слайда по Paymentwall, Terminal3 и FasterPay, декабрь 2024. В нём стратегия 2024 года для каждого бренда, каналы, мероприятия, лидогенерация и бюджет, анализ соцсетей, стратегия 2025 года и календари мероприятий. Я работала над отчётом и оформила его в Canva.","t323":"Основные результаты отчёта кратко приведены в разделе 3. Бюджет и подробные цифры по аккаунтам остаются закрытыми; я могу разобрать отчёт на собеседовании.","t324":"Титульный слайд годового маркетингового отчёта в чёрном и жёлтом","t325":"<b>Обложка<\/b>Одна яркая палитра для трёх брендов.","t326":"Слайд с повесткой годового маркетингового отчёта с десятью пронумерованными разделами","t327":"<b>Содержание<\/b>Десять разделов на одной странице.","t328":"Слайд с перечнем маркетинговых каналов трёх брендов с галочками и крестиками","t329":"<b>Каналы<\/b>Три бренда в сравнении на одной сетке.","t330":"Слайд со стратегией соцсетей на 2025 год с примерами контента и хэштегами","t331":"<b>План по соцсетям на 2025<\/b>Примеры контента и хэштеги по каналам.","t332":"Презентация компании, <em>Standart<\/em>","t333":"Презентация компании из шести слайдов для логистического клиента, на русском языке, в той же тёмно-синей и золотой системе, что сайт и печать.","t334":"Открыть полную презентацию (PDF, 6 слайдов)","t335":"Титульный слайд презентации Standart с грузовиком и слоганом: Хранить. Маркировать. Доставлять. Расти быстрее.","t336":"<b>Обложка<\/b>Один слоган и один акцентный цвет.","t337":"Слайд с шестью ключевыми цифрами о таможенном хранении, маркировке и пошлинах","t338":"<b>Ключевые цифры<\/b>Шесть фактов, один стиль акцентов.","t339":"Слайд, объясняющий в четыре шага, как работает таможенный склад","t340":"<b>Процесс<\/b>Плотная процедура, превращённая в четыре шага.","t341":"Бизнес-проект, презентация <em>Samae<\/em>","t342":"Финальная презентация студенческого приложения Samae в Ёнсе: канва бизнес-модели, пользовательские сценарии, тестирование примерно с 30 студентами, обратная связь и планы масштабирования. Два слайда показаны в блоке про дизайн продуктов выше.","t343":"Открыть полную презентацию (PDF, 18 слайдов)","t344":"Стартап-проект, <em>Ansi<\/em>","t345":"Ansi — приложение для K-pop-фандомов, где игра превращается в пожертвования на благотворительность, с AR-фотокарточками и настраиваемыми персонажами айдолов. Мы сделали его как финальный университетский проект. Моя часть — бизнес-сторона стартапа: аналитика, продажи, планирование и остальные шаги превращения идеи приложения в бизнес.","t346":"Открыть полную презентацию (PDF, 15 слайдов)","t347":"Ansi · идея","t348":"Слайд с решением Ansi: играй и жертвуй, корпоративное спонсорство, игра с персонажем артиста и общение с друзьями по фандому","t349":"<b>Идея<\/b>Играй, жертвуй на доброе дело и общайся с фандомом.","t350":"Ansi · бизнес-модель","t351":"Канва бизнес-модели Ansi с партнёрами, ключевыми видами деятельности, ресурсами, ценностными предложениями, источниками дохода и сегментами клиентов","t352":"<b>Канва бизнес-модели<\/b>Партнёры, источники дохода и расходы стартапа.","t353":"Ansi · стратегия","t354":"Слайд с маркетинговыми стратегиями Ansi и точкой безубыточности около 245 пользователей в месяц","t355":"<b>Маркетинг и безубыточность<\/b>Каналы и число пользователей в месяц, нужное для безубыточности: около 245.","t356":"Инфлюенсеры <em>и PR<\/em>","t357":"Платную кампанию с инфлюенсерами от брифа до отчёта я пока не проводила. Ниже — опыт, который у меня есть, и то, как я провела бы такую кампанию для Akradex.","t358":"Что я <em>уже делала<\/em>","t359":"<b>StoryTaco:<\/b> анализировала зарубежные рынки, искала подходящих для сотрудничества инфлюенсеров и связывалась с ними. Моя работа охватывала поиск и коммуникацию.","t360":"<b>R:ED:<\/b> два года была лицом бренда, приглашала школы и бренды к сотрудничеству.","t361":"<b>CompassNet:<\/b> весь маркетинг в Корее для трёх финтех-брендов, включая локальный PR: писала новостные статьи, отправляла их в газеты и поддерживала офлайн-мероприятия.","t362":"Как я провела бы это <em>для Akradex<\/em>","t363":"<b>Найти:<\/b> врачей, образовательных блогеров по науке о коже и владельцев клиник с надёжной аудиторией — в Корее и на целевых рынках Akradex.","t364":"<b>Проверить:<\/b> изучить прошлые партнёрства с брендами и заявления, соблюдать правила каждого рынка для медицинских продуктов.","t365":"<b>Бриф:<\/b> в первую очередь образование. Сценарии, утверждённые компанией, без обещаний результата и без изображений «до и после».","t366":"<b>Измерять:<\/b> сохранения, репосты и квалифицированные обращения от клиник и дистрибьюторов, а не только просмотры.","t367":"Почему <em>Akradex<\/em>","t368":"Три пункта из моего опыта, которые соответствуют требованиям роли.","t369":"Сложное — <em>понятно<\/em>","t370":"В R:ED я объясняла робототехнику школам и институтам. В CompassNet занималась B2B-маркетингом и платёжными продуктами для компаний из разных отраслей. Мне бы очень хотелось, чтобы наука о красоте и косметика стали следующей технической темой, которую я сделаю понятной.","t371":"Мероприятия <em>на разных языках<\/em>","t372":"Лента Terminal3 строилась вокруг выставок: G-Star в Пусане с подписями на английском и корейском, GamesBeat в Сан-Франциско и Games Gathering в Киеве. Akradex участвует в Cosmoprof и Vietbeauty, и мне знаком этот цикл: анонс, участие, итоги.","t373":"Настоящий интерес <em>к науке<\/em>","t374":"В моём проекте в Ёнсе «K-Culture and the World» я анализировала, как со временем менялась корейская бьюти-индустрия. Я каждый день пользуюсь уходом за кожей и в свободное время читаю о том, как разрабатываются формулы.","t375":"Нелинейный путь <em>как преимущество<\/em>","t376":"Я уже меняла отрасли и каждый раз изучала продукт достаточно хорошо, чтобы объяснять его клиентам. Следующей была бы эстетическая медицина. Я применила бы тот же метод: разобраться в продукте вместе с экспертами, писать ясно, сохранять единство бренда и проверять каждое утверждение перед публикацией.","t377":"Люди — <em>в каждом сообщении<\/em>","t378":"Эстетическая медицина — вещь личная. Люди принимают решения, испытывая и надежду, и доверие, а порой и сомнения, и хорошая коммуникация уважает всё это. Мне нравится понимать эту человеческую сторону маркетинга и работать с людьми — от коллег и врачей до клиентов. Ясная, доброжелательная и честная коммуникация — то, что я принесла бы в Akradex.","t379":"Идеи для <em>Akradex<\/em>","t380":"Пять концепций, которые я предложила бы в первый месяц. Это мои собственные идеи, а не контент Akradex, и макеты ниже — быстрые наброски. Отраслевые обзоры 2026 года указывают на растущий интерес к скин-бустерам и регенеративным процедурам, а также на то, что врачи проверяют вирусные тренды, — и это оставляет место для спокойной ленты под руководством экспертов.","t381":"Концепция A · Карусель","t382":"Пептиды или коллаген? <em>Две разные задачи.<\/em>","t383":"Слайд 1 из 5","t384":"Пептиды и коллаген простыми словами","t385":"Вопрос-крючок","t386":"Что такое коллаген","t387":"Что такое пептиды","t388":"Где каждый из них применяется в клинике (согласовано с компанией)","t389":"«Спросите своего врача» и ссылка","t390":"Canva или Figma, 1080 × 1350. Все факты предоставляет и проверяет медицинская команда Akradex.","t391":"Концепция B · Серия","t392":"Миф <em>или<\/em> факт?","t393":"«Нанесение 5–7 средств каждый вечер увлажняет сильнее».","t394":"Вирусное утверждение и ответ врача","t395":"Утверждение в кавычках","t396":"Ответ врача на видео или в карточке с цитатой","t397":"Одна строка-вывод","t398":"Одно утверждение на пост в повторяющемся макете, 1080 × 1350. Ответы — только от врача.","t399":"Концепция C · Рилс или карусель","t400":"Из лаборатории <em>в клинику<\/em>","t401":"Как продукт создаётся и проверяется.","t402":"За кадром","t403":"Лаборатория","t404":"Контроль качества","t405":"Упаковка","t406":"Поступление в клинику","t407":"Используются материалы и факты, утверждённые компанией. Концепция отражает мой интерес к тому, как создаются формулы.","t408":"Концепция D · <em>Стенд за 15 секунд<\/em>","t409":"Вертикальный рилс с итогами для Cosmoprof, Vietbeauty и других выставок, основанный на моей работе над мероприятиями Terminal3.","t410":"Общий план стенда, 3 с","t411":"Продукт крупным планом, 3 с","t412":"Демонстрация врача, 3 с","t413":"Встреча или рукопожатие, 3 с","t414":"Финальная карточка: «До встречи на следующей выставке», 3 с","t415":"1080 × 1920, субтитры на английском и местном языке, музыка с разрешённой лицензией.","t416":"Концепция E · <em>Спросите эксперта<\/em>","t417":"Рилс на 30 секунд: один вопрос от подписчиков, один врач отвечает в камеру.","t418":"Вопрос на экране, 3 с","t419":"Ответ врача, около 20 с","t420":"Субтитры на двух языках","t421":"Финальная карточка с линейкой продуктов","t422":"Формат повторяется каждую неделю, поэтому его можно снимать сразу пачками.","t423":"Правила рекламы медицинских продуктов различаются по рынкам. Каждый пост выше потребует одобрения медицинской и регуляторной команды Akradex перед публикацией.","t424":"Давайте создавать <em>удивительное<\/em> вместе.","t425":"Эл. почта: <span id=\"mailtxt\" style=\"user-select:all\">sofiiagorpenko@gmail.com<\/span>","t426":"Скопировать мою почту","t427":"Написать мне","t428":"Визитка. Нажмите, чтобы перевернуть","t429":"Sofiia<br/>Gorpenko","t430":"Перевернуть ↻","t431":"<em>Познакомимся<\/em> поближе?","t432":"Эл. почта","t433":"sofiiagorpenko@gmail.com","t434":"sofiia-gorpenko","t435":"<b>Город<\/b>Сеул, Южная Корея","t436":"Сканируйте для LinkedIn","t437":"Нажмите на карточку, чтобы перевернуть её.","t438":"Все концепции в портфолио — мои собственные идеи, а не контент компании.","tTitle":"Sofiia Gorpenko — портфолио","tL":"Язык","tQ":"QR-код со ссылкой на профиль Sofiia Gorpenko в LinkedIn"}</script>
+<script>
+(function(){
+  var LANGS=['en','ko','ru'],KEY='sg-lang';
+  var D={};['ko','ru'].forEach(function(l){try{D[l]=JSON.parse(document.getElementById('i18n-'+l).textContent);}catch(e){D[l]={};}});
+  var MSG={
+    en:{copied:'Copied. Paste it into your email',copyfail:'Select the address above to copy it',flip:'Business card. Press to flip it over',flipb:'Business card, back side. Press to flip it over'},
+    ko:{copied:'복사했습니다. 이메일에 붙여넣으세요',copyfail:'위의 주소를 선택해서 복사해 주세요',flip:'명함입니다. 눌러서 뒤집어 보세요',flipb:'명함 뒷면입니다. 눌러서 다시 뒤집어 보세요'},
+    ru:{copied:'Скопировано. Вставьте в письмо',copyfail:'Выделите адрес выше, чтобы скопировать',flip:'Визитка. Нажмите, чтобы перевернуть',flipb:'Визитка, обратная сторона. Нажмите, чтобы перевернуть'}
+  };
+  var FONTS={
+    ko:'https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap',
+    ru:'https://fonts.googleapis.com/css2?family=Onest:wght@400;500;700;800;900&family=Playfair+Display:ital,wght@1,400&display=swap'
+  };
+  var nodes=[].slice.call(document.querySelectorAll('[data-i18n]'));
+  var attrs=[].slice.call(document.querySelectorAll('[data-i18n-attr]'));
+  var numEls=[].slice.call(document.querySelectorAll('.num,.rs-num'));
+  var EN={},cur='en',titleEn=document.title;
+  nodes.forEach(function(e){var id=e.getAttribute('data-i18n');if(!(id in EN))EN[id]=e.innerHTML;});
+  attrs.forEach(function(e){var p=e.getAttribute('data-i18n-attr').split(':');e.__a=p[0];e.__id=p[1];if(!(p[1] in EN))EN[p[1]]=e.getAttribute(p[0]);});
+  numEls.forEach(function(e){e.__n=e.textContent;});
+  function text(id,l){l=l||cur;var d=D[l];return (l!=='en'&&d&&d[id]!=null)?d[id]:EN[id];}
+  window.sgT=function(id){var v=text(id);var t=document.createElement('div');t.innerHTML=v;return t.textContent;};
+  window.sgMsg=function(k){return (MSG[cur]||MSG.en)[k];};
+  window.sgLang=function(){return cur;};
+  function loadFont(l){
+    if(!FONTS[l]||document.getElementById('font-'+l))return;
+    var k=document.createElement('link');k.rel='stylesheet';k.id='font-'+l;k.href=FONTS[l];document.head.appendChild(k);
+  }
+  function ruNum(s){return s.replace(/(\d),(\d{3})/g,'$1 $2').replace(/(\d)\.(\d)/g,'$1,$2');}
+  function apply(l){
+    if(LANGS.indexOf(l)<0)l='en';
+    cur=l;loadFont(l);
+    document.documentElement.setAttribute('lang',l);
+    nodes.forEach(function(e){e.innerHTML=text(e.getAttribute('data-i18n'),l);});
+    attrs.forEach(function(e){e.setAttribute(e.__a,text(e.__id,l));});
+    numEls.forEach(function(e){e.textContent=(l==='ru')?ruNum(e.__n):e.__n;});
+    document.title=(l!=='en'&&D[l]&&D[l].tTitle)||titleEn;
+    [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
+    try{document.dispatchEvent(new Event('sglang'));}catch(e){}
+  }
+  window.sgSet=function(l){apply(l);try{localStorage.setItem(KEY,l);}catch(e){}};
+  [].forEach.call(document.querySelectorAll('.lang button'),function(b){b.addEventListener('click',function(){window.sgSet(b.getAttribute('data-lang'));});});
+  var start='en';
+  try{var q=new URLSearchParams(location.search).get('lang');if(q&&LANGS.indexOf(q)>-1)start=q;else{var s=localStorage.getItem(KEY);if(s&&LANGS.indexOf(s)>-1)start=s;}}catch(e){}
+  if(start!=='en')apply(start);
+})();
+</script>
+<script>
+(function(){
+  try{
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var t3=document.querySelector('.t3'), charts=document.querySelector('.charts'), num=document.querySelector('.rs-num[data-count]');
+    if(!('IntersectionObserver' in window)||reduce)return;
+    if(charts){charts.classList.add('armed');
+      new IntersectionObserver(function(e,o){e.forEach(function(x){if(x.isIntersecting){charts.classList.add('in');o.disconnect();}});},{threshold:.25}).observe(charts);}
+    if(t3){t3.classList.add('armed');
+      new IntersectionObserver(function(e,o){e.forEach(function(x){if(x.isIntersecting){t3.classList.add('in');o.disconnect();}});},{threshold:.25}).observe(t3);}
+    if(num){var target=+num.getAttribute('data-count');
+      new IntersectionObserver(function(e,o){e.forEach(function(x){if(!x.isIntersecting)return;o.disconnect();
+        if(document.documentElement.lang==='ru')return;
+        var t0=performance.now(),d=1300;
+        (function f(t){var k=Math.min(1,(t-t0)/d),v=Math.round(target*(1-Math.pow(1-k,3)));num.textContent=v.toLocaleString('en-US');if(k<1)requestAnimationFrame(f);})(t0);
+      });},{threshold:.4}).observe(num);}
+  }catch(err){}
+})();
+</script>
+<script>
+(function(){
+  var b=document.getElementById('copymail');
+  if(!b)return;
+  function M(k,fb){return (window.sgMsg&&window.sgMsg(k))||fb;}
+  function mail(){return document.getElementById('mailtxt');}
+  function done(ok){b.textContent=ok?M('copied','Copied. Paste it into your email'):M('copyfail','Select the address above to copy it');setTimeout(function(){b.textContent=(window.sgT&&window.sgT('t426'))||'Copy my email';},2800);}
+  b.addEventListener('click',function(){
+    var t=mail();if(!t)return;
+    var v=t.textContent.trim();
+    function fallback(){
+      try{var r=document.createRange();r.selectNodeContents(t);var sel=window.getSelection();sel.removeAllRanges();sel.addRange(r);
+        var ok=document.execCommand('copy');done(ok);}catch(e){done(false);}
+    }
+    try{
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(function(){done(true);},fallback);}
+      else fallback();
+    }catch(e){fallback();}
+  });
+})();
+</script>
+<script>
+(function(){
+  var flip=document.getElementById('flipcard'),tilt=document.getElementById('tilt'),
+      front=document.getElementById('cardfront'),back=document.getElementById('cardback'),scene=document.querySelector('.cardscene');
+  if(!flip)return;
+  function set(f){
+    flip.classList.toggle('flipped',f);flip.setAttribute('aria-pressed',f?'true':'false');
+    flip.setAttribute('aria-label',(window.sgMsg&&window.sgMsg(f?'flipb':'flip'))||(f?'Business card, back side. Press to flip it over':'Business card. Press to flip it over'));
+    try{ if(f){front.setAttribute('inert','');back.removeAttribute('inert');}else{back.setAttribute('inert','');front.removeAttribute('inert');} }catch(e){}
+  }
+  var flipped=false;
+  function toggle(){flipped=!flipped;set(flipped);}
+  document.addEventListener('sglang',function(){set(flipped);});
+  flip.addEventListener('click',function(e){ if(e.target.closest('a'))return; toggle(); });
+  flip.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();} });
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine=window.matchMedia&&matchMedia('(hover: hover) and (pointer: fine)').matches;
+  if(fine&&!reduce){
+    scene.addEventListener('mousemove',function(e){
+      var r=scene.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      tilt.style.setProperty('--ry',(x*14).toFixed(1)+'deg');tilt.style.setProperty('--rx',(-y*10).toFixed(1)+'deg');
+    });
+    scene.addEventListener('mouseleave',function(){tilt.style.setProperty('--ry','0deg');tilt.style.setProperty('--rx','0deg');});
+  }
+  if(!reduce&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es,o){es.forEach(function(x){ if(x.isIntersecting){scene.classList.add('peek');o.disconnect();} });},{threshold:.5}).observe(scene);
+  }
+})();
+</script>
+<script>
+(function(){
+  try{
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce)return;
+    var bar=document.getElementById('progbar'),arch=document.querySelector('.arch img');
+    var ticking=false;
+    function onScroll(){
+      if(ticking)return;ticking=true;
+      requestAnimationFrame(function(){
+        var h=document.documentElement,max=h.scrollHeight-h.clientHeight,y=window.scrollY||h.scrollTop;
+        if(bar)bar.style.transform='scaleX('+(max>0?Math.min(1,y/max):0)+')';
+        if(arch&&y<900)arch.style.transform='translateY('+(y*0.06).toFixed(1)+'px)';
+        ticking=false;
+      });
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+    if(!('IntersectionObserver' in window))return;
+    /* scroll reveal */
+    var sel='.sec-head,.intro,.topic,.card,.win,.tool,.stat,.rs-tile,.rs-big,.chart,.t3-copy,.tl li,.toc li,.arch-note';
+    var els=[].slice.call(document.querySelectorAll(sel)).filter(function(e){return !e.closest('.flip')&&!e.closest('header.hero')&&!e.closest('.cardscene');});
+    var seen=new Map();
+    els.forEach(function(e){
+      var par=e.parentElement,i=seen.get(par)||0;seen.set(par,i+1);
+      e.style.setProperty('--rd',Math.min(i,5)*80+'ms');e.classList.add('rv');
+    });
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){
+      if(x.isIntersecting){var e=x.target;e.classList.add('in');io.unobserve(e);
+        setTimeout(function(){e.classList.remove('rv','in');e.style.removeProperty('--rd');},1100);}
+    });},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+    els.forEach(function(e){io.observe(e);});
+    /* count-up for stat numbers */
+    var nums=[].slice.call(document.querySelectorAll('.rs-tile .num,.t3-stats .num'));
+    var cio=new IntersectionObserver(function(es){es.forEach(function(x){
+      if(!x.isIntersecting)return;var el=x.target;cio.unobserve(el);if(document.documentElement.lang==='ru')return;
+      var t=el.textContent,m=t.match(/^([^0-9]*)([0-9][0-9,]*\.?[0-9]*)(.*)$/);if(!m)return;
+      var raw=m[2],dec=(raw.split('.')[1]||'').length,comma=raw.indexOf(',')>-1,target=parseFloat(raw.replace(/,/g,''));
+      var t0=performance.now(),d=1200;
+      (function f(now){var k=Math.min(1,(now-t0)/d),v=target*(1-Math.pow(1-k,3)),str=v.toFixed(dec);
+        if(comma)str=Number(str).toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec});
+        el.textContent=m[1]+str+m[3];if(k<1)requestAnimationFrame(f);else el.textContent=t;})(t0);
+    });},{threshold:.6});
+    nums.forEach(function(n){cio.observe(n);});
+    /* nav scrollspy */
+    var links=[].slice.call(document.querySelectorAll('.nav a[href^="#"]')),map={};
+    links.forEach(function(a){var id=a.getAttribute('href').slice(1),sec=document.getElementById(id);if(sec)map[id]={a:a,s:sec};});
+    var sio=new IntersectionObserver(function(es){es.forEach(function(x){
+      if(x.isIntersecting){links.forEach(function(a){a.classList.remove('active');});var o=map[x.target.id];if(o)o.a.classList.add('active');}
+    });},{rootMargin:'-45% 0px -50% 0px'});
+    Object.keys(map).forEach(function(k){sio.observe(map[k].s);});
+  }catch(err){}
+})();
+</script>
+</body>
+</html>
